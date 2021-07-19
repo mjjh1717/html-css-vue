@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .container {
+            font-size: 10px;
+            display: grid;
+            grid-gap: 0.5em;
+            background-color: lightblue;
+            margin: 1em;
+        }
+
+        .container span {
+            width: 5em;
+            height: 5em;
+            border-radius: 50%;
+            background-color: darkcyan;
+        }
+
+        .container:nth-child(1) { grid-template-columns: repeat(4, 1fr); }
+        .container:nth-child(2) { grid-template-columns: repeat(3, 1fr); }
+        .container:nth-child(3) { grid-template-columns: repeat(2, 1fr); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="container">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="container">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            background-color: lightyellow;
+        }
+
+        .eight {
+            font-size: 6px;
+            margin: 5em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .eight div {
+            border-radius: 50%;
+            border: 3em solid lightgreen;
+        }
+
+        .eight div:nth-child(1) {
+            width: 18em;
+            height: 18em;
+        }
+
+        .eight div:nth-child(2) {
+            width: 20em;
+            height: 20em;
+        }
+
+        .eight:nth-child(2) div:nth-child(1) {
+            position: relative;
+            top: 3em;
+        }
+    </style>
+</head>
+<body>
+    <figure class="eight">
+        <div></div>
+        <div></div>
+    </figure>
+    <figure class="eight">
+        <div></div>
+        <div></div>
+    </figure>
+</body>
+</html>

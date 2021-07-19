@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<style>
+		.container {
+			display: flex;
+			color: red;
+		}
+
+		.container span {
+			width: 10em;
+			height: 10em;
+			margin: 1em;
+			border-radius: 50%;
+			background: repeating-radial-gradient(currentColor, lightyellow);
+			background-size: 10% 10%;
+		}
+
+		.container span:nth-child(1) { color: orange; }
+		.container span:nth-child(2) { color: hotpink; }
+		.container span:nth-child(3) { color: limegreen; }
+	</style>
+</head>
+<body>
+	<div class="container">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+</body>
+</html>

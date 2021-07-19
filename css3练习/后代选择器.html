@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tree {
+            width: 30px;
+            height: 300px;
+            background-color: saddlebrown;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .tree .branch {
+            width: 160px;
+            height: 20px;
+            background-color: peru;
+            border-radius: 10px;
+            display: flex;
+            justify-content: flex-end;
+            transform: rotate(-30deg);
+        }
+
+        .tree .branch .left {
+            width: 40px;
+            height: 40px;
+            border-radius: 100% 0 100% 0;
+            background-color: green;
+            transform: translateY(-100%);
+        }
+    </style>
+</head>
+
+<body>
+    <figure class="tree">
+        <div class="branch"><span class="left"></span><span class="left"></span><span class="left"></span></div>
+        <div class="branch"><span class="left"></span><span class="left"></span><span class="left"></span></div>
+    </figure>
+</body>
+
+</html>

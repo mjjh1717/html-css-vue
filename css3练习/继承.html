@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .word {
+            font-family: monospace;
+            font-size: 100px;
+            color: orange;
+            text-transform: uppercase;
+            width: 2em;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .word div {
+            position: relative;
+        }
+
+        .word div::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 130%;
+            left: -15%;
+            background-color: moccasin;
+            border-radius: 0.1em;
+            z-index: -1;
+            transform: rotate(-25deg);
+        }
+    </style>
+</head>
+<body>
+    <figure class="word">
+        <div>c</div>
+        <div>s</div>
+        <div>s</div>
+    </figure>
+</body>
+</html>

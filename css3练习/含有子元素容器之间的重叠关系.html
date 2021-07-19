@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 2em;
+            display: flex;
+        }
+
+        figure {
+            margin: 2em 4em;
+        }
+
+        .container {
+            width: 10em;
+            height: 10em;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1em;
+        }
+
+        .container:nth-child(2) {
+            top: -6em;
+            left: 4em;
+        }
+
+        .sub {
+            width: 7em;
+            height: 7em;
+            border-radius: 0.5em;
+        }
+
+        .container:nth-child(1) {background-color: lightgreen;}
+        .container:nth-child(2) {background-color: moccasin;}
+        .container:nth-child(1) .sub {background-color: green;}
+        .container:nth-child(2) .sub {background-color: orange;}
+
+        figure:nth-child(2) .container:nth-child(1) {z-index: 2;}
+        figure:nth-child(2) .container:nth-child(2) {z-index: 1;}
+        figure:nth-child(2) .container:nth-child(1) .sub {z-index: 3;}
+        figure:nth-child(2) .container:nth-child(2) .sub {z-index: 4;}
+
+    </style>
+</head>
+<body>
+    <figure>
+        <div class="container">
+            <div class="sub"></div>
+        </div>
+        <div class="container">
+            <div class="sub"></div>
+        </div>
+    </figure>
+
+    <figure>
+        <div class="container">
+            <div class="sub"></div>
+        </div>
+        <div class="container">
+            <div class="sub"></div>
+        </div>
+    </figure>
+</body>
+</html>

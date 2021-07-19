@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            height: 20em;
+            font-size: 6px;
+            display: flex;
+            margin: 4em;
+            position: relative;
+        }
+
+        .container span {
+            display: block;
+            width: 20em;
+            height: 20em;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .container span:nth-child(1) { left: 0; }
+        .container span:nth-child(2) { left: 10em; }
+        .container span:nth-child(3) { left: 20em; }
+        .container span:nth-child(4) { left: 30em; }
+
+        .container span:nth-child(1) { background-color: hsl(0, 90%, 70%); }
+        .container span:nth-child(2) { background-color: hsl(30, 90%, 70%); }
+        .container span:nth-child(3) { background-color: hsl(60, 90%, 70%); }
+        .container span:nth-child(4) { background-color: hsl(90, 90%, 70%); }
+        
+        .container:nth-child(2) span:nth-child(1) {z-index: 4;}
+        .container:nth-child(2) span:nth-child(2) {z-index: 3;}
+        .container:nth-child(2) span:nth-child(3) {z-index: 2;}
+        .container:nth-child(2) span:nth-child(4) {z-index: 1;}
+
+        .container:nth-child(3) span:nth-child(1) {z-index: 1;}
+        .container span:nth-child(2) {z-index: auto;}
+        .container span:nth-child(3) {z-index: auto;}
+        .container:nth-child(3) span:nth-child(4) {z-index: 1;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="container">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="container">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+</html>

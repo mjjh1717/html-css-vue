@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .man {
+            width: 12em;
+            height: 33em;
+            font-size: 10px;
+            position: relative;
+            color: gray;
+            margin: 5em;
+        }
+
+        .head {
+            position: absolute;
+            width: 7em;
+            height: 7em;
+            background-color: currentColor;
+            border-radius: 50%;
+            right: 0;
+        }
+
+        .body {
+            position: absolute;
+            width: 6.2em;
+            height: 14.4em;
+            background-color: currentColor;
+            top: 7em;
+            border-radius: 100% 20% 0 0;
+        }
+
+        .feet::before,
+        .feet::after {
+            content: '';
+            position: absolute;
+            width: 4em;
+            height: 1.4em;
+            background-color: currentColor;
+            bottom: 0;
+            left: -1.6em;
+            border-radius: 1em 80% 0.4em 0.4em;
+        }
+
+        .feet::after {
+            transform: translateX(5.6em) translateY(-0.6em) rotate(4deg);
+        }
+    </style>
+</head>
+<body>
+    <figure class="man">
+        <div class="head"></div>
+        <div class="body"></div>
+        <div class="feet"></div>
+    </figure>
+</body>
+</html>

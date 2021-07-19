@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .prime-numbers {
+            width: 400px;
+            height: 400px;
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            counter-reset: n;
+        }
+
+        .prime-numbers div {
+            counter-increment: n;
+            position: relative;
+            width: 30px;
+            height: 30px;
+        }
+
+        .prime-numbers div::before {
+            content: counter(n);
+            position: absolute;
+            width: inherit;
+            height: inherit;
+            background-color: lightgreen;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        .prime-numbers div:nth-child(2)::before,
+        .prime-numbers div:nth-child(3)::before,
+        .prime-numbers div:nth-child(5)::before,
+        .prime-numbers div:nth-child(7)::before,
+        .prime-numbers div:not(:nth-child(1)):not(:nth-child(2n)):not(:nth-child(3n)):not(:nth-child(5n)):not(:nth-child(7n))::before {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <figure class="prime-numbers">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </figure>
+</body>
+
+</html>
