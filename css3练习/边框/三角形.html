@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body {
+			margin: 3em;
+			background-color: white;
+		}
+
+		section {
+			display: flex;
+			justify-content: space-around;
+			align-items: flex-end;
+			background-color: #eee;
+			padding: 1em;
+		}
+
+		section div {
+			width: 0;
+			height: 0;
+			outline: 1px dashed black;
+			border-style: solid;
+			border-color: transparent transparent dodgerblue transparent;
+		}
+
+		.div1 {
+			border-width: 5em;			
+		}
+
+		.div2 {
+			border-width: 0 5em 10em 5em;
+		}
+
+		.div3 {
+			border-width: 0 5em calc(5em * 1.732) 5em;
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<div class="div1"></div>
+		<div class="div2"></div>
+		<div class="div3"></div>
+	</section>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            background-color: #eee;
+            padding: 1em;
+            width: 30em;
+        }
+
+        .container div {
+            font-size: 10px;
+            width: 10em;
+            height: 10em;
+            background-color: lightgreen;
+            box-sizing: border-box;
+            border: 1em solid seagreen;
+            border-radius: 0.5em;
+            margin: 1em;
+        }
+
+        .container div:nth-child(1) {transform: scaleX(1) scaleY(1);}
+        .container div:nth-child(2) {transform: scaleX(0.8) scaleY(1.2);}
+        .container div:nth-child(3) {transform: scaleX(1.2) scaleY(0.8);}
+        .container div:nth-child(4) {transform: scaleX(0.5) scaleY(0.5);}
+
+        .container:nth-child(2) div {border-radius: 50%;}
+    </style>
+</head>
+<body>
+    <figure class="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </figure>
+    
+    <figure class="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </figure>
+</body>
+</html>

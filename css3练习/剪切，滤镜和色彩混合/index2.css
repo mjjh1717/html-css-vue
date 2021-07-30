@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.penrose {
+    width: 20em;
+    height: 20em;
+    position: relative;
+    top: -1em;
+    left: -3em;
+}
+
+.penrose div {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background-color: limegreen;
+    clip-path: polygon(
+        57% 0,
+        75% 0,
+        26% 85%,
+        89.5% 85%,
+        98.4% 100%,
+        0 100%
+    );
+}
+
+.penrose div:nth-child(2) { transform: rotate(120deg); }
+.penrose div:nth-child(3) { transform: rotate(240deg); }
+
+.penrose div:nth-child(2) { filter: brightness(0.66); }
+.penrose div:nth-child(3) { filter: brightness(0.33); }
+
+.penrose div:nth-child(2) {
+    top: 18.3%;
+    left: 43.3%;
+}
+
+.penrose div:nth-child(3) {
+    top: 46.5%;
+    left: 5.9%;
+}

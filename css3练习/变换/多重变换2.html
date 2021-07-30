@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            margin: 5em;
+        }
+
+        .container {
+            font-size: 10px;
+            width: 10em;
+            height: 10em;
+            margin: 1em;
+            outline: 1px dashed gray;
+        }
+
+        .container .layer1,
+        .container .layer2,
+        .container .layer3 {
+            width: 4em;
+            height: 4em;
+        }
+
+        .container .layer1 { outline: 1px dashed orange; }
+        .container .layer2 { outline: 1px dashed seagreen; }
+        .container .layer3 { background-color: deepskyblue; }
+
+        .container:nth-child(2) .layer1,
+        .container:nth-child(3) .layer1,
+        .container:nth-child(4) .layer1 {
+            transform: translate(3em, 3em);
+        }
+
+        .container:nth-child(3) .layer2,
+        .container:nth-child(4) .layer2 {
+            transform: scale(1.5, 1.5);
+        }
+
+        .container:nth-child(4) .layer3 {
+            transform: rotate(45deg);
+        }
+        
+    </style>
+</head>
+<body>
+    <figure class="container">
+        <div class="layer1">
+            <div class="layer2">
+                <div class="layer3"></div>
+            </div>
+        </div>
+    </figure>
+
+    <figure class="container">
+        <div class="layer1"></div>
+    </figure>
+
+    <figure class="container">
+        <div class="layer1">
+            <div class="layer2"></div>
+        </div>
+    </figure>
+
+    <figure class="container">
+        <div class="layer1">
+            <div class="layer2">
+                <div class="layer3"></div>
+            </div>
+        </div>
+    </figure>
+</body>
+</html>

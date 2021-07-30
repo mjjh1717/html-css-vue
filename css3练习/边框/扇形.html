@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body {
+			margin: 3em;
+			background-color: white;
+		}
+
+		section {
+			background-color: #eee;
+			margin: 1em 0;
+			padding: 1em;
+			display: flex;
+			justify-content: space-around;
+		}
+
+		section div {
+			width: 8em;
+			height: 8em;
+			background-color: dodgerblue;
+		}
+
+		.div1 { border-radius: 100% 0 0 0; }
+		.div2 { border-radius: 0 100% 0 0; }
+		.div3 { border-radius: 0 0 100% 0; }
+		.div4 { border-radius: 0 0 0 100%; }
+	</style>
+</head>
+<body>
+	<section>
+		<div class="div1"></div>
+		<div class="div2"></div>
+		<div class="div3"></div>
+		<div class="div4"></div>
+	</section>
+</body>
+</html>

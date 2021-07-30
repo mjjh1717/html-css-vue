@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        figure {
+            display: flex;
+            background-color: #eee;
+            padding: 1em;
+            width: 40em;
+        }
+
+        figure div {
+            font-size: 10px;
+            width: 10em;
+            height: 10em;
+            border: 1px dashed black;
+            margin: 1em 3em;
+        }
+
+        figure div::before {
+            content: '';
+            position: absolute;
+            width: inherit;
+            height: inherit;
+            background-color: lightgreen;
+        }
+
+        .container1 .div1::before {transform: skewX(30deg);}
+        .container1 .div2::before {transform: skewX(15deg);}
+        .container1 .div3::before {transform: skewX(-15deg);}
+        .container1 .div4::before {transform: skewX(-30deg);}
+
+        .container2 .div1::before {transform: skewY(30deg);}
+        .container2 .div2::before {transform: skewY(15deg);}
+        .container2 .div3::before {transform: skewY(-15deg);}
+        .container2 .div4::before {transform: skewY(-30deg);}
+    </style>
+</head>
+<body>
+    <figure class="container1">
+        <div class="div1"></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+        <div class="div4"></div>
+    </figure>
+    
+    <figure class="container2">
+        <div class="div1"></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+        <div class="div4"></div>
+    </figure>
+</body>
+</html>

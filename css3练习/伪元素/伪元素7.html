@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<style>
+		body {
+			margin: 5em;
+			display: flex;
+		}
+
+		.heart {
+			font-size: 10px;
+			width: 12em;
+			position: relative;
+			margin: 0 2em;
+			display: flex;
+		}
+
+		.heart::before,
+		.heart::after {
+			content: '';
+			position: relative;
+			width: 6em;
+			height: 10em;
+			border-radius: 3em 3em 0 0;
+		}
+
+		.heart:nth-child(1)::before {background-color: hsl(0, 79%, 72%, 0.8);}
+		.heart:nth-child(1)::after {background-color: hsl(90, 79%, 72%, 0.8);}
+
+		.heart:nth-child(2)::before {background-color: hsl(0, 79%, 72%, 0.8);}
+		.heart:nth-child(2)::after {background-color: hsl(90, 79%, 72%, 0.8);}
+
+		.heart:nth-child(2)::before {
+			transform-origin: right bottom;
+			transform: rotate(45deg);
+		}
+
+		.heart:nth-child(2)::after {
+			transform-origin: left bottom;
+			transform: rotate(-45deg);
+		}
+
+		.heart:nth-child(3)::before {
+			background-color: lightcoral;
+			transform-origin: right bottom;
+			transform: rotate(45deg);
+		}
+
+		.heart:nth-child(3)::after {
+			background-color: lightcoral;
+			transform-origin: left bottom;
+			transform: rotate(-45deg);
+		}	
+	</style>
+</head>
+<body>
+	<figure class="heart"></figure>
+	<figure class="heart"></figure>
+	<figure class="heart"></figure>
+</body>
+</html>

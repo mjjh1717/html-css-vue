@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../common/note.js"></script>
+    <script>new Note('4-13').render()</script>
+	<style>
+		.container div {
+			width: 500px;
+			height: 300px;
+			margin: 50px;
+		}
+
+		.container div:nth-child(1) {
+			background-image: radial-gradient(
+				orangered 15%,
+				orange 15%, orange 30%,
+				gold 30%, gold 45%,
+				lightgreen 45%, lightgreen 60%,
+				cyan 60%);
+		}
+
+		.container div:nth-child(2) {
+			background-image: radial-gradient(
+				circle,
+				orangered 15%,
+				orange 15%, orange 30%,
+				gold 30%, gold 45%,
+				lightgreen 45%, lightgreen 60%,
+				cyan 60%);
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div></div>
+		<div></div>
+	</div>
+</body>
+</html>

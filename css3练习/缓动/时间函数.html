@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 2em;
+    }
+    
+    .container {
+      width: 600px;
+      background-color: #eee;
+      border: 1px solid gray;
+      padding: 1em;
+    }
+    
+    .container div {
+      font-size: 10px;
+      width: 6em;
+      height: 6em;
+      outline: 1px dashed gray;
+      margin: 1em;
+      position: relative;
+    }
+    
+    .container div::before {
+      content: '';
+      position: absolute;
+      width: inherit;
+      height: inherit;
+      background-color: lightgreen;
+      top: 0;
+      left: 0;
+      transition: 1.5s;
+    }
+    
+    .container div:hover::before {
+      left: 500px;
+    }
+    
+    .container div.ease::before {
+      transition-timing-function: ease;
+    }
+    
+    .container div.linear::before {
+      transition-timing-function: linear;
+    }
+    
+    .container div.ease-in::before {
+      transition-timing-function: ease-in;
+    }
+    
+    .container div.ease-out::before {
+      transition-timing-function: ease-out;
+    }
+    
+    .container div.ease-in-out::before {
+      transition-timing-function: ease-in-out;
+    }
+    
+    .container div.bezier1::before {
+      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    
+    .container div.bezier2::before {
+      transition-timing-function: cubic-bezier(0.75, -1, 0.75, 3);
+    }
+    
+    .container div.bezier3::before {
+      transition-timing-function: cubic-bezier(0.5, -0.25, 0.5, 1.25);
+    }
+    
+    .container div.bezier4::before {
+      transition-timing-function: cubic-bezier(0.5, 1.7, 0.5, 1.2);
+    }
+    
+    .container div.bezier5::before {
+      transition-timing-function: cubic-bezier(0.8, 0.2, 0, 1.2);
+    }
+  </style>
+</head>
+
+<body>
+  <figure class="container">
+    <div class="ease"></div>
+    <div class="linear"></div>
+    <div class="ease-in"></div>
+    <div class="ease-out"></div>
+    <div class="ease-in-out"></div>
+    <div class="bezier1"></div>
+    <div class="bezier2"></div>
+    <div class="bezier3"></div>
+    <div class="bezier4"></div>
+    <div class="bezier5"></div>
+  </figure>
+</body>
+
+</html>

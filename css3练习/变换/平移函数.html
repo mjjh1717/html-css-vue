@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container {
+            font-size: 100px;
+            width: 3em;
+            height: 2em;
+            background-color: #eee;
+        }
+
+        .container div {
+            width: 1em;
+            height: 1em;
+            border: 1px dashed black;
+            position: relative;
+            top: calc((100% - 1em) / 2);
+            left: calc((100% - 1em) / 2);
+        }
+
+        .container div::before {
+            content: '';
+            position: absolute;
+            width: inherit;
+            height: inherit;
+            background-color: lightgreen;
+            filter: opacity(0.8);
+            transform: translateX(0.5em);
+        }
+    </style>
+</head>
+<body>
+    <figure class="container">
+        <div></div>
+    </figure>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../common/note.js"></script>
+    <script>new Note('7-13').render()</script>
+    <style>
+        body {
+            margin: 2em;
+        }
+
+        .alphabet {
+            font-size: 10px;
+            width: 50em;
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-gap: 1em;
+        }
+
+        .alphabet div {
+            width: 6em;
+            height: 5em;
+            border-radius: 1em;
+            background-color: lightyellow;
+            font-family: sans-serif;
+            box-shadow: 0.5em 0.5em 0.5em hsla(0, 0%, 0%, 0.3);
+            position: relative;
+        }
+
+        .alphabet div::before {
+            content: 'A';
+            position: absolute;
+            left: 30%;
+            top: 15%;
+            font-size: 30px;
+            color: indianred;
+        }
+
+        .alphabet div::after {
+            content: 'a';
+            position: absolute;
+            left: 70%;
+            top: 35%;
+            font-size: 20px;
+            color: orange;
+        }
+
+        .alphabet { counter-reset: n; }
+        .alphabet div { counter-increment: n; }
+        .alphabet div::before { content: counter(n, upper-alpha); }
+        .alphabet div::after { content: counter(n, lower-alpha); }
+    </style>
+</head>
+<body>
+    <figure class="alphabet">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </figure>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../common/note.js"></script>
+    <script>new Note('9-10').render()</script>
+    <style>
+        body {
+            margin: 5em;
+        }
+
+        .message {
+            position: relative;
+            font-size: 30px;
+            letter-spacing: 0.05em;
+            width: 10em;
+            height: 3em;
+            top: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: orangered;
+            background-color: lightyellow;
+            border: 1px solid lightgray;
+            filter: opacity(0);
+            /* visibility: hidden; */
+            transition: 0.5s;
+        }
+
+        .message .close {
+            font-size: 20px;
+            font-family: sans-serif;
+            text-decoration: none;
+            position: absolute;
+            right: -1em;
+            top: -1em;
+            color: gray;
+        }
+
+        .message:target {
+            /* visibility: visible; */
+            filter: opacity(1);
+        }
+    </style>
+</head>
+<body>
+    <a href="#message">click to open popup</a>
+    <div class="message" id="message">
+        Think Different
+        <a href="#" class="close">X</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../common/note.js"></script>
+    <script>new Note('7-11').render()</script>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2em;
+        }
+
+        .container div {
+            width: 3em;
+            height: 3em;
+            background-color: royalblue;
+            border-radius: 50%;
+            position: relative;
+        } 
+
+        .container div::before {
+            content: counter(n);
+            position: absolute;
+            font-size: 1.5em;
+            font-family: sans-serif;
+            width: inherit;
+            line-height: 2em;
+            text-align: center;
+            color: white;
+        }
+
+        .container:nth-child(1) div { background-color: royalblue; }
+        .container:nth-child(2) div { background-color: seagreen; }
+        .container:nth-child(3) div { background-color: orange; }
+        .container:nth-child(4) div { background-color: palevioletred; }
+
+        .container:nth-child(1) { counter-reset: n; }
+        .container:nth-child(1) div { counter-increment: n; }
+
+        .container:nth-child(2) { counter-reset: n 10; }
+        .container:nth-child(2) div { counter-increment: n; }
+
+        .container:nth-child(3) { counter-reset: n; }
+        .container:nth-child(3) div { counter-increment: n 3; }
+
+        .container:nth-child(4) { counter-reset: n 11; }
+        .container:nth-child(4) div { counter-increment: n -1; }
+    </style>
+</head>
+<body>
+    <figure class="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </figure>
+
+    <figure class="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </figure>
+
+    <figure class="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </figure>
+
+    <figure class="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </figure>
+</body>
+</html>

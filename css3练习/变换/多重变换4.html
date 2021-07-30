@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 5em;
+        }
+
+        .container div {
+            width: 1em;
+            height: 1.5em;
+            margin: 1em;
+            background-color: dodgerblue;
+            border-radius: 0.1em;
+            filter: opacity(calc(0.3 + var(--n) * 0.1));
+        }
+
+        .container div:nth-child(1) { --n: 1;}
+        .container div:nth-child(2) { --n: 2;}
+        .container div:nth-child(3) { --n: 3;}
+        .container div:nth-child(4) { --n: 4;}
+        .container div:nth-child(5) { --n: 5;}
+        .container div:nth-child(6) { --n: 6;}
+        .container div:nth-child(7) { --n: 7;}
+
+        .container div {
+            transform:
+                skewX(-25deg)
+                scale(calc(0.3 + var(--n) * 0.1))
+                translateX(calc(var(--n) * 3em));
+        }
+    </style>
+</head>
+<body>
+    <figure class="container">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+    </figure>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .container div {
+      width: 3em;
+      height: 3em;
+      background-color: royalblue;
+      border-radius: 50%;
+      position: relative;
+    }
+    
+    .container div::before {
+      content: 'x';
+      position: absolute;
+      font-size: 1.5em;
+      font-family: sans-serif;
+      width: inherit;
+      line-height: 2em;
+      text-align: center;
+      color: white;
+    }
+    
+    .container:nth-child(2) {
+      counter-reset: n;
+    }
+    
+    .container:nth-child(2) div {
+      counter-increment: n;
+    }
+    
+    .container:nth-child(2) div::before {
+      content: counter(n);
+    }
+  </style>
+</head>
+
+<body>
+  <figure class="container">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </figure>
+
+  <figure class="container">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </figure>
+</body>
+
+</html>

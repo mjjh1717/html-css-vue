@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body {
+			margin: 10em;
+			background-color: black;
+		}
+
+		.container {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.container div {
+			position: absolute;
+			border-radius: 50%;
+			border: solid lime;
+		}
+
+		.div1 {
+			width: 4em;
+			height: 4em;
+			background-color: lime;
+		}
+
+		.div2 {
+			width: 7em;
+			height: 7em;
+			border-width: 0.5em;
+		}
+
+		.div3 {
+			width: 10em;
+			height: 10em;
+			border-width: 0.3em;
+			filter: opacity(0.6);
+		}
+
+		.div4 {
+			width: 13em;
+			height: 13em;
+			border-width: 0.1em;
+			filter: opacity(0.3);
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="div1"></div>
+		<div class="div2"></div>
+		<div class="div3"></div>
+		<div class="div4"></div>
+	</div>
+</body>
+</html>

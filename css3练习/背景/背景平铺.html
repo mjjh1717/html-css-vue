@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.ruler {
+			position: relative;
+		    width: 45em;
+		    height: 6em;
+		    font-size: 10px;
+		    background: linear-gradient(
+		        peru 45%, 
+		        sandybrown 45%
+		    );
+		    margin: 5em;
+		}
+
+		.ruler::before,
+		.ruler::after {
+			content: '';
+			position: absolute;
+			width: inherit;
+			height: inherit;
+		    background-image: linear-gradient(
+		    	to right,
+		    	transparent 1em,
+		    	darkslategray 1em, darkslategray 2em,
+		    	transparent 2em);
+		    background-repeat: repeat-x;
+		}
+
+		.ruler::before {
+		    background-size: 4em 2em;
+		}
+
+		.ruler::after {
+		    background-size: 4em 1em;
+		    left: 2em;
+		}
+	</style>
+</head>
+<body>
+	<div class="ruler"></div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../common/note.js"></script>
+    <script>new Note('8-6').render()</script>
+    <style>
+        body {
+            margin: 5em 2em;
+            display: flex;
+        }
+
+        .mail {
+            font-size: 5px;
+            width: 23em;
+            height: 19em;
+            color: seagreen;
+            box-sizing: border-box;
+            border: 3em solid;
+            border-radius: 0.6em;
+            position: relative;
+        }
+
+        .mail::before {
+            content: '';
+            position: absolute;
+            left: calc((100% - 13em - 2.5em) / 2);
+            top: -6.5em;
+            width: 13em;
+            height: 13em;
+            border-radius: 0 0 5em 0;
+            border-style: solid;
+            border-width: 0 2.5em 2.5em 0;
+        }
+
+        .mail:nth-child(2)::before {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    <figure class="mail"></figure>
+    <figure class="mail"></figure>
+</body>
+</html>

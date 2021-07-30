@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 2em;
+    }
+    
+    .container {
+      display: flex;
+      justify-content: space-around;
+      font-size: 10px;
+      width: 50em;
+      padding: 2em;
+      margin: 2em;
+    }
+    
+    .container div {
+      width: 10em;
+      height: 10em;
+      background-color: lightgreen;
+    }
+    
+    .container div:first-child:hover,
+    .container div:nth-child(3) {
+      background-color: lightcoral;
+      border-radius: 50%;
+    }
+    
+    .container:nth-child(1) div:first-child {
+      transition: background-color 1s, border-radius 1s 1s;
+    }
+    
+    .container:nth-child(1) div:nth-child(2) {
+      background-color: lightcoral;
+    }
+  </style>
+</head>
+
+<body>
+  <figure class="container">
+    <div></div>
+    <div></div>
+    <div></div>
+  </figure>
+</body>
+
+</html>

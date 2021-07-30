@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../common/note.js"></script>
+    <script>new Note('7-12').render()</script>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .container div {
+            width: 3em;
+            height: 3em;
+            background-color: royalblue;
+            border-radius: 50%;
+            position: relative;
+        } 
+
+        .container div::before {
+            content: '';
+            position: absolute;
+            font-size: 1.5em;
+            font-family: sans-serif;
+            width: inherit;
+            line-height: 2em;
+            text-align: center;
+            color: white;
+        }
+
+        .container { counter-reset: n; }
+        .container div { counter-increment: n; }
+        .container div::before { content: counter(n, var(--list-type)); }
+
+        .container:nth-child(1) { --list-type: upper-roman; }
+        .container:nth-child(2) { --list-type: trad-chinese-formal; }
+        .container:nth-child(3) { --list-type: trad-chinese-informal; }
+        .container:nth-child(4) { --list-type: hiragana; }
+        .container:nth-child(5) { --list-type: korean-hangul-formal; }
+    </style>
+</head>
+<body>
+    <figure class="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </figure>
+
+    <figure class="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </figure>
+
+    <figure class="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </figure>
+
+    <figure class="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </figure>
+
+    <figure class="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </figure>
+</body>
+</html>

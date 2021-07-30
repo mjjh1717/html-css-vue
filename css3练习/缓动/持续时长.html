@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 2em;
+    }
+    
+    .container {
+      display: flex;
+      justify-content: space-around;
+      background-color: #eee;
+      font-size: 10px;
+      width: 50em;
+      padding: 2em;
+      margin: 2em;
+    }
+    
+    .container div {
+      width: 10em;
+      height: 10em;
+      background-color: lightgreen;
+    }
+    
+    .container div:nth-child(1):hover {
+      background-color: lightcoral;
+    }
+    
+    .container div:nth-child(2):hover {
+      border-radius: 50%;
+    }
+    
+    .container div:nth-child(3):hover {
+      transform: scale(0.5);
+    }
+    
+    .container div:nth-child(4):hover {
+      box-shadow: 0 0 2em 0.5em hsla(0, 0%, 0%, 0.3);
+    }
+    
+    .container div:nth-child(1) {
+      transition-duration: 0.5s;
+    }
+    
+    .container div:nth-child(2) {
+      transition-duration: 1s;
+    }
+    
+    .container div:nth-child(3) {
+      transition-duration: 2s;
+    }
+    
+    .container div:nth-child(4) {
+      transition-duration: 3s;
+    }
+    
+    .container:nth-child(2) div:nth-child(1) {
+      background-color: lightcoral;
+    }
+    
+    .container:nth-child(2) div:nth-child(2) {
+      border-radius: 50%;
+    }
+    
+    .container:nth-child(2) div:nth-child(3) {
+      transform: scale(0.5);
+    }
+    
+    .container:nth-child(2) div:nth-child(4) {
+      box-shadow: 0 0 2em 0.5em hsla(0, 0%, 0%, 0.3);
+    }
+  </style>
+</head>
+
+<body>
+  <figure class="container">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </figure>
+
+  <figure class="container">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </figure>
+</body>
+
+</html>

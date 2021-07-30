@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 5em;
+            background-color: lightyellow;
+            display: flex;
+            width: 20em;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .emoji {
+            position: relative;
+            box-sizing: border-box;
+            width: 10em;
+            height: 10em;
+            background-color: pink;
+            border-radius: 50% 50% 75% 50%;
+        }
+
+        .emoji .eye {
+            position: absolute;
+            box-sizing: border-box;
+            width: 3em;
+            height: 3em;
+            border: 0.1em solid gray;
+            border-radius: 50%;
+            top: 3em;
+        }
+
+        .emoji .eye.left { left: 1em; }
+        .emoji .eye.right { right: 1em; }
+
+        .emoji .eye.left::before,
+        .emoji .eye.right::before {
+            content: '';
+            position: absolute;
+            width: 1em;
+            height: 1em;
+            background-color: #222;
+            border-radius: 50%;
+            top: 1em;
+            left: calc((100% - 1em) / 2);
+        }
+
+        .emoji .mouth {
+            position: absolute;
+            width: 2em;
+            height: 2em;
+            border: 0.1em solid;
+            bottom: 1em;
+            left: 40%;
+            border-radius: 50%;
+            border-color: transparent gray gray transparent;
+            transform: rotate(20deg);
+        }
+
+        .arrow {
+            position: relative;
+            cursor: pointer;
+            font-size: 2em;
+            color: gray;
+        }
+
+        .arrow.right {
+            order: 3;
+        }
+
+        .emoji .eye::before {
+            transition: 0.3s;
+        }
+
+        .arrow.left:hover ~ .emoji .eye::before {
+            transform: translate(-0.6em, -0.6em);
+        }
+
+        .arrow.right:hover ~ .emoji .eye::before {
+            transform: translate(0.6em, -0.6em);
+        }
+    </style>
+</head>
+<body>
+    <span class="arrow left">&lt;&lt;</span>
+    <span class="arrow right">&gt;&gt;</span>
+    
+    <div class="emoji">
+        <span class="eye left"></span>
+        <span class="eye right"></span>
+        <span class="mouth"></span>
+    </div>
+</body>
+</html>

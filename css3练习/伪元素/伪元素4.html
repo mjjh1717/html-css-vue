@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<style>
+		body {
+			display: flex;
+		}
+
+		.circle,
+		.circle::before,
+		.circle::after {
+		    width: 10em;
+		    height: 10em;
+		    box-sizing: border-box;
+		    border-top: 0.3em solid currentColor;
+		    border-radius: 50%;
+			position: relative;
+		}
+
+		.circle::before,
+		.circle::after {
+		    content: '';
+		    position: absolute;
+		    top: -0.2em;
+		}
+
+		.circle { color: hotpink; }
+		.circle::before { color: dodgerblue; }
+		.circle::after { color: gold; }
+
+		.circle::before { transform: rotate(120deg); }
+		.circle::after { transform: rotate(240deg); }
+
+		.circle:nth-child(2)::before {
+			left: 2em;
+			transform: none;
+		}
+
+		.circle:nth-child(2)::after {
+			right: 2em;
+			transform: none;
+		}
+	</style>
+</head>
+<body>
+	<figure class="circle"></figure>
+	<figure class="circle"></figure>
+</body>
+</html>

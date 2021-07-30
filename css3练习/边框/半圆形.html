@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body {
+			margin: 3em;
+			background-color: white;
+		}
+
+		section {
+			background-color: #eee;
+			margin: 1em 0;
+			padding: 1em;
+			display: flex;
+			justify-content: space-around;
+			flex-wrap: wrap;
+		}
+
+		section div {
+			box-sizing: border-box;
+			width: 0;
+			height: 0;
+			border: 4em solid;
+			outline: 1px dashed black;
+		}
+
+		.div1 { border-color: lightgreen deepskyblue transparent transparent; }
+		.div2 { border-color: transparent deepskyblue mediumpurple transparent; }
+		.div3 { border-color: transparent transparent mediumpurple coral; }
+		.div4 { border-color: lightgreen transparent transparent coral; }
+
+		section.b div {
+			border-radius: 50%;
+		}
+	</style>
+</head>
+<body>
+	<section class="a">
+		<div class="div1"></div>
+		<div class="div2"></div>
+		<div class="div3"></div>
+		<div class="div4"></div>
+	</section>
+
+	<section class="b">
+		<div class="div1"></div>
+		<div class="div2"></div>
+		<div class="div3"></div>
+		<div class="div4"></div>
+	</section>
+</body>
+</html>

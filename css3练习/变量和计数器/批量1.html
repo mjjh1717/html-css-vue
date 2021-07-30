@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: lightyellow;
+    }
+    
+    .lotus {
+      width: 20em;
+      height: 11.5em;
+      position: relative;
+    }
+    
+    .lotus div {
+      position: absolute;
+      box-sizing: border-box;
+      width: 10em;
+      height: 3em;
+      border: 0.2em solid dimgray;
+      border-radius: 50%;
+      background-color: hsl(60, 100%, 50%);
+      transform-origin: right;
+      top: calc((20em - 3em) / 2);
+      box-shadow: 0 0 1em hsla(0, 0%, 0%, 0.5);
+    }
+    
+    .lotus div {
+      transform: rotate(var(--rotate-deg));
+      filter: hue-rotate(var(--hue-deg));
+    }
+    
+    .lotus div:nth-child(1) {
+      --rotate-deg: 0deg;
+      --hue-deg: 0deg;
+    }
+    
+    .lotus div:nth-child(2) {
+      --rotate-deg: 20deg;
+      --hue-deg: 30deg;
+    }
+    
+    .lotus div:nth-child(3) {
+      --rotate-deg: 40deg;
+      --hue-deg: 60deg;
+    }
+    
+    .lotus div:nth-child(4) {
+      --rotate-deg: 60deg;
+      --hue-deg: 90deg;
+    }
+    
+    .lotus div:nth-child(5) {
+      --rotate-deg: 80deg;
+      --hue-deg: 120deg;
+    }
+    
+    .lotus div:nth-child(6) {
+      --rotate-deg: 100deg;
+      --hue-deg: 150deg;
+    }
+    
+    .lotus div:nth-child(7) {
+      --rotate-deg: 120deg;
+      --hue-deg: 180deg;
+    }
+    
+    .lotus div:nth-child(8) {
+      --rotate-deg: 140deg;
+      --hue-deg: 210deg;
+    }
+    
+    .lotus div:nth-child(9) {
+      --rotate-deg: 160deg;
+      --hue-deg: 240deg;
+    }
+    
+    .lotus div:nth-child(10) {
+      --rotate-deg: 180deg;
+      --hue-deg: 270deg;
+    }
+  </style>
+</head>
+
+<body>
+  <figure class="lotus">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </figure>
+</body>
+
+</html>

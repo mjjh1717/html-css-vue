@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 5em 2em;
+            display: flex;
+        }
+
+        .cube {
+            font-size: 10px;
+            width: 12em;
+            height: 12em;
+            color: deepskyblue;
+            background-color: currentColor;
+            position: relative;
+        }
+
+        .cube::before {
+            content: '';
+            position: absolute;
+            width: inherit;
+            height: 3em;
+            top: -3em;
+            left: 0;
+            background-color: currentColor;
+            filter: brightness(0.9);
+        }
+
+        .cube::after {
+            content: '';
+            position: absolute;
+            width: 3em;
+            height: inherit;
+            top: 0;
+            right: -3em;
+            background-color: currentColor;
+            filter: brightness(0.6);
+        }
+
+        .cube:nth-child(2)::before,
+        .cube:nth-child(3)::before {
+            transform-origin: bottom;
+            transform: skewX(-45deg);
+        }
+
+        .cube:nth-child(3)::after {
+            transform-origin: left;
+            transform: skewY(-45deg);
+        }
+    </style>
+</head>
+<body>
+    <figure class="cube"></figure>
+    <figure class="cube"></figure>
+    <figure class="cube"></figure>
+</body>
+</html>

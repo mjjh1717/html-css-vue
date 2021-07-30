@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body {
+		    margin: 5em;
+		    background-color: papayawhip;
+		    display: flex;
+		    justify-content: space-around;
+		}
+
+		.duck {
+		    width: 10em;
+		    height: 10em;
+		    display: grid;
+		    grid-template-columns: repeat(2, 1fr);
+		    transform: rotate(-45deg);
+		}
+
+		.duck .div1 {
+			background-color: seagreen;
+			border-radius: 100% 0 0 0;
+		}
+
+		.duck .div2 {
+			background-color: seagreen;
+			border-radius: 0 100% 0 0;
+		    background-image: radial-gradient(black 0.5em, transparent 0.5em);
+		}
+
+		.duck .div3 {
+			background-color: seagreen;
+			border-radius: 0 0 100% 0;
+		}
+
+		.duck .div4 {
+			background-color: coral;
+			border-radius: 0 0 0 100%;
+		}
+
+		.duck:nth-child(1) {
+		    transform: none;
+		}
+
+		.duck:nth-child(1) div {
+			outline: 1px dashed black;
+		}
+	</style>
+</head>
+<body>
+    <figure class="duck">
+    	<div class="div1"></div>
+    	<div class="div2"></div>
+    	<div class="div3"></div>
+    	<div class="div4"></div>
+    </figure>
+
+    <figure class="duck">
+    	<div class="div1"></div>
+    	<div class="div2"></div>
+    	<div class="div3"></div>
+    	<div class="div4"></div>
+    </figure>
+</body>
+</html>

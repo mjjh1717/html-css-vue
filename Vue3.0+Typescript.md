@@ -1753,101 +1753,653 @@ creartApp(App).use(router).mount('#app')
 - router也有forward
   - 通过调用 history.forward() 在历史中前进。相当于 router.go(1)
 
+### router-link的v-slot
 
+- 在vue-router3.x的时候，router-link有一个tag属性，可以决定router-link到底渲染成什么元素： 
 
+  - 但是在vue-router4.x开始，该属性被移除了； 
+  - 而给我们提供了更加具有灵活性的v-slot的方式来定制渲染的内容；
 
+- v-slot如何使用呢？ 
 
+  - 首先，我们需要使用custom表示我们整个元素要自定义 
 
+    - 如果不写，那么自定义的内容会被包裹在一个 a 元素中；
 
+  - 其次，我们使用v-slot来作用域插槽来获取内部传给我们的值： 
 
+    - href：解析后的 URL； 
 
+    - route：解析后的规范化的route对象；
 
+    - navigate：触发导航的函数； 
 
+    - isActive：是否匹配的状态；
 
+    - isExactActive：是否是精准匹配的状态；
 
+      ![image-20210720152001975](img/image-20210720152001975.png)
 
+### router-view的v-slot
 
+-  router-view也提供给我们一个插槽，可以用于  和  组件来包裹你的路由组件：
 
+  - Component：要渲染的组件； 
 
+  - route：解析出的标准化路由对象；
 
+    ![image-20210720152754526](img/image-20210720152754526.png)
 
+### 动态添加路由
 
+- 某些情况下我们可能需要动态的来添加路由： 
 
+  - 比如根据用户不同的权限，注册不同的路由； 
+  - 这个时候我们可以使用一个方法 addRoute；
 
+- 如果我们是为route添加一个children路由，那么可以传入对应的name：
 
+  ![image-20210720153424695](img/image-20210720153424695.png)
 
+### 动态删除路由
 
+- 删除路由有以下三种方式： 
 
+  - 方式一：添加一个name相同的路由； 
 
+  - 方式二：通过removeRoute方法，传入路由的名称； 
 
+  - 方式三：通过addRoute方法的返回值回调；
 
+    ![image-20210720160856222](img/image-20210720160856222.png)
 
+- 路由的其他方法补充：
 
+  - router.hasRoute()：检查路由是否存在。
+  - router.getRoutes()：获取一个包含所有路由记录的数组。
 
+### 路由导航守卫
 
+- vue-router 提供的导航守卫主要用来通过跳转或取消的方式守卫导航。 
+- 全局的前置守卫beforeEach是在导航触发时会被回调的：
+- 它有两个参数：
+  - to：即将进入的路由Route对象；
+  - from：即将离开的路由Route对象； 
+- 它有返回值： 
+  - false：取消当前导航； 
+  - 不返回或者undefined：进行默认导航； 
+  - 返回一个路由地址： 
+    - 可以是一个string类型的路径；
+    - 可以是一个对象，对象中包含path、query、params等信息； 
+  - 可选的第三个参数：next 
+    - 在Vue2中我们是通过next函数来决定如何进行跳转的； 
+    - 但是在Vue3中我们是通过返回值来控制的，不再推荐使用next函数，这是因为开发中很容易调用多次next；
 
+### 登录守卫功能
 
+- 比如我们完成一个功能，只有登录后才能看到其他页面：
 
+  ![image-20210720161135744](img/image-20210720161135744.png)
 
+### 其他导航守卫
 
+- Vue还提供了很多的其他守卫函数，目的都是在某一个时刻给予我们回调，让我们可以更好的控制程序的流程或者功能： 
+  - https://next.router.vuejs.org/zh/guide/advanced/navigation-guards.html 
+- 我们一起来看一下完整的导航解析流程： 
+  - 导航被触发。 
+  - 在失活的组件里调用 beforeRouteLeave 守卫。 
+  - 调用全局的 beforeEach 守卫。 
+  - 在重用的组件里调用 beforeRouteUpdate 守卫(2.2+)。 
+  - 在路由配置里调用 beforeEnter。 
+  - 解析异步路由组件。 
+  - 在被激活的组件里调用 beforeRouteEnter。 
+  - 调用全局的 beforeResolve 守卫(2.5+)。 
+  - 导航被确认。 
+  - 调用全局的 afterEach 钩子。 
+  - 触发 DOM 更新。 
+  - 调用 beforeRouteEnter 守卫中传给 next 的回调函数，创建好的组件实例会作为回调函数的参数传入。
 
+### 完整的导航解析流程
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+1. 导航被触发。
+2. 在失活的组件里调用 `beforeRouteLeave` 守卫。
+3. 调用全局的 `beforeEach` 守卫。
+4. 在重用的组件里调用 `beforeRouteUpdate` 守卫(2.2+)。
+5. 在路由配置里调用 `beforeEnter`。
+6. 解析异步路由组件。
+7. 在被激活的组件里调用 `beforeRouteEnter`。
+8. 调用全局的 `beforeResolve` 守卫(2.5+)。
+9. 导航被确认。
+10. 调用全局的 `afterEach` 钩子。
+11. 触发 DOM 更新。
+12. 调用 `beforeRouteEnter` 守卫中传给 `next` 的回调函数，创建好的组件实例会作为回调函数的参数传入。
 
 ## Vuex的状态管理
 
-什么是状态管理
+### 什么是状态管理
 
+- 在开发中，我们会的应用程序需要处理各种各样的数据，这些 数据需要保存在我们应用程序中的某一个位置，对于这些数据 的管理我们就称之为是 状态管理。 
 
+- 在前面我们是如何管理自己的状态呢？ 
 
+  - 在Vue开发中，我们使用组件化的开发方式； 
 
+  - 而在组件中我们定义data或者在setup中返回使用的数据， 这些数据我们称之为state； 
 
+  - 在模块template中我们可以使用这些数据，模块最终会被 渲染成DOM，我们称之为View； 
 
+  - 在模块中我们会产生一些行为事件，处理这些行为事件时， 有可能会修改state，这些行为事件我们称之为actions；
 
+    ![image-20210720164020451](img/image-20210720164020451.png)
 
+### 复杂的状态惯例
 
+- JavaScript开发的应用程序，已经变得越来越复杂了： 
+  - JavaScript需要管理的状态越来越多，越来越复杂； 
+  - 这些状态包括服务器返回的数据、缓存数据、用户操作产生的数据等等；
+  - 也包括一些UI的状态，比如某些元素是否被选中，是否显示加载动效，当前分页； 
+- 当我们的应用遇到多个组件共享状态时，单向数据流的简洁性很容易被破坏：
+  - 多个视图依赖于同一状态； 
+  - 来自不同视图的行为需要变更同一状态；
+- 我们是否可以通过组件数据的传递来完成呢？ 
+  - 对于一些简单的状态，确实可以通过props的传递或者Provide的方式来共享状态；
+  - 但是对于复杂的状态管理来说，显然单纯通过传递和共享的方式是不足以解决问题的，比如兄弟组件如何共享 数据呢？
 
+### Vuex的状态管理
 
+- 管理不断变化的state本身是非常困难的： 
 
+  - 状态之间相互会存在依赖，一个状态的变化会引起另一个状态的变化，View页面也有可能会引起状态的变化； 
+  - 当应用程序复杂时，state在什么时候，因为什么原因而发生了变化，发生了怎么样的变化，会变得非常难以控 制和追踪； 
 
+- 因此，我们是否可以考虑将组件的内部状态抽离出来，以一个全局单例的方式来管理呢？
 
+  - 在这种模式下，我们的组件树构成了一个巨大的 “视图View”；
+  - 不管在树的哪个位置，任何组件都能获取状态或者触发行为；
+  - 通过定义和隔离状态管理中的各个概念，并通过强制性的规则来维护视图和状态间的独立性，我们的代码边会 变得更加结构化和易于维护、跟踪； 
 
+- 这就是Vuex背后的基本思想，它借鉴了Flux、Redux、Elm（纯函数语言，redux有借鉴它的思想）：
 
+  ![image-20210720171036890](img/image-20210720171036890.png)
 
+### VueX的安装
 
+- 依然我们要使用vuex，首先第一步需要安装vuex
 
+  - 我们这里使用的是vuex4.x，安装的时候需要添加 next 指定版本；
 
+    ```
+    npm install vuex@next
+    ```
 
+### 创建Store
 
+- 每一个Vuex应用的核心就是store（仓库）： 
+  - store本质上是一个容器，它包含着你的应用中大部分的状态（state）；
+- Vuex和单纯的全局对象有什么区别呢？ 
+- 第一：Vuex的状态存储是响应式的 
+  - 当Vue组件从store中读取状态的时候，若store中的状态发生变化，那么相应的组件也会被更新；
+- 第二：你不能直接改变store中的状态 
+  - 改变store中的状态的唯一途径就显示提交 (commit) mutation； 
+  - 这样使得我们可以方便的跟踪每一个状态的变化，从而让我们能够通过一些工具帮助我们更好的管理应用的状态；
+- 使用步骤：
+  - 创建Store对象；
+  - 在app中通过插件安装；
 
+### 组件中使用Store
 
+- 在组件中使用store，我们按照如下的方式：
+  - 在模板中使用；
+  - 在options api中使用，比如computed；
+  - 在setup中使用；
 
+### Vue devtool
 
+- vue其实提供了一个devtools，方便我们对组件或者vuex进行调试：
 
+- 我们需要安装beta版本支持vue3，目前是6.0.0 beta15； 
 
+- 它有两种常见的安装方式：
 
+  - 方式一：通过chrome的商店；
+  - 方式二：手动下载代码，编译、安装；
 
+- 方式一：通过Chrome商店安装：
 
+  - 由于某些原因我们可能不能正常登录Chrome商店，所以可以选择第二种；
 
+    ![image-20210721102504966](img/image-20210721102504966.png)
+
+### 手动安装devtool
+
+- 方式二：手动下载代码，编译、安装 
+
+  - https://github.com/vuejs/devtools/tree/v6.0.0-beta.15下载代码； 
+
+  - 执行 yarn install 安装相关的依赖； 
+
+  - 执行 yarn run build 打包；
+
+    ![image-20210721102605193](img/image-20210721102605193.png)
+
+### 单一状态树
+
+- Vuex 使用单一状态树：
+  - 用一个对象就包含了全部的应用层级状； 
+  - 采用的是SSOT，Single Source of Truth，也可以翻译成单一数据源； 
+  - 这也意味着，每个应用将仅仅包含一个 store 实例；
+  - 单状态树和模块化并不冲突，后面我们会讲到module的概念； 
+- 单一状态树的优势：
+  - 如果你的状态信息是保存到多个Store对象中的，那么之后的管理和维护等等都会变得特别困难；
+  - 所以Vuex也使用了单一状态树来管理应用层级的全部状态；
+  - 单一状态树能够让我们最直接的方式找到某个状态的片段，而且在之后的维护和调试过程中，也可以非常方便 的管理和维护；
+
+### 组件获取状态
+
+- 使用计算属性： 
+
+  ![image-20210721180030512](img/image-20210721180030512.png)
+
+- 如果我们有很多个状态都需要获取话，可以使用mapState的辅助函数： 
+
+  - mapState的方式一：对象类型； 
+  - mapState的方式二：数组类型； 
+  - 也可以使用展开运算符和来原有的computed混合在一起；
+
+### 在setup中使用mapState
+
+- 在setup中如果我们单个获取装是非常简单的： 
+
+  - 通过useStore拿到store后去获取某个状态即可； 
+  - 但是如果我们需要使用 mapState 的功能呢？ 
+
+- 默认情况下，Vuex并没有提供非常方便的使用mapState的方式，这里我们进行了一个函数的封装：
+
+  ![image-20210721180128005](img/image-20210721180128005.png)
+
+### getters的基本使用
+
+- 某些属性需要进行变化后再来使用，这个时候可以使用getters
+
+  ![image-20210721180216141](img/image-20210721180216141.png)
+
+### getters第二个参数
+
+- getters可以接收第二个参数
+
+  ![image-20210721180245339](img/image-20210721180245339.png)
+
+### getters的返回函数
+
+- getters中的函数本身，可以返回一个函数，那么在使用的地方相当于可以调用这个函数
+
+  ![image-20210721180338679](img/image-20210721180338679.png)
+
+### mapGetters的辅助函数
+
+- 可以使用mapGetter的辅助函数
+
+  ![image-20210721180421072](img/image-20210721180421072.png)
+
+- 在setup中使用
+
+  ![image-20210721180438525](img/image-20210721180438525.png)
+
+### Mutation基本使用
+
+- 更改 Vuex 的 store 中的状态的**唯一方法**是提交 mutation：
+
+  ![image-20210721180513105](img/image-20210721180513105.png)
+
+### Mutation携带数据
+
+- 很多时候我们在提交mutation的时候，会携带一些数据，这个时候我们可以使用参数
+
+  ![image-20210721180631984](img/image-20210721180631984.png)
+
+- payload为对象类型
+
+  ![image-20210721180649480](img/image-20210721180649480.png)
+
+- 对象风格提交
+
+  ![image-20210721180702129](img/image-20210721180702129.png)
+
+### Mutation常量类型
+
+- 定义常量：mutation-type.js
+
+  ![image-20210721180744347](img/image-20210721180744347.png)
+
+- 定义mutation
+
+  ![image-20210721180756165](img/image-20210721180756165.png)
+
+- 提交mutation
+
+  ![image-20210721180807923](img/image-20210721180807923.png)
+
+### mapMutations辅助函数
+
+- 我们也可以借助于辅助函数，帮助我们快速映射到对应的方法中： 
+
+  ![image-20210721180841120](img/image-20210721180841120.png)
+
+- 在setup中使用也是一样的：
+
+  ![image-20210721180853161](img/image-20210721180853161.png)
+
+### mutation重要原则
+
+- 一条重要的原则就是要记住 mutation 必须是同步函数 
+  - 这是因为devtool工具会记录mutation的日记； 
+  - 每一条mutation被记录，devtools都需要捕捉到前一状态和后一状态的快照； 
+  - 但是在mutation中执行异步操作，就无法追踪到数据的变化； 
+  - 所以Vuex的重要原则中要求 mutation必须是同步函数；
+
+### actions的基本使用
+
+- Action类似于mutation，不同在于：
+  - Action提交的是mutation，而不是直接变更状态；
+  - Action可以包含任意异步操作； 
+- 这里有一个非常重要的参数context：
+  - context是一个和store实例均有相同方法和属性的context对象；
+  - 所以我们可以从其中获取到commit方法来提交一个mutation，或者通过 context.state 和 context.getters 来 获取 state 和 getters； 
+  - 但是为什么它不是store对象呢？这个等到我们讲Modules时再具体来说；
+
+### actions的分发操作
+
+- 如何使用action呢？进行action的分发： 
+
+  - 分发使用的是 store 上的dispatch函数； ![image-20210722134601856](img/image-20210722134601856.png)
+
+    
+
+- 同样的，它也可以携带我们的参数： 
+
+  ![image-20210722134618272](img/image-20210722134618272.png)
+
+- 也可以以对象的形式进行分发：
+
+  ![image-20210722134631020](img/image-20210722134631020.png)
+
+### actions的辅助函数
+
+- action也有对应的辅助函数：
+  - 对象类型的写法；
+  - 数组类型的写法；
+
+  ![image-20210722134644535](img/image-20210722134644535.png)
+
+### actions的异步操作
+
+- Action 通常是异步的，那么如何知道 action 什么时候结束呢？ 
+
+  - 我们可以通过让action返回Promise，在Promise的then中来处理完成后的操作；
+
+  ![image-20210722134700281](img/image-20210722134700281.png)
+
+### module的基本使用
+
+- 什么是Module？
+
+  - 由于使用单一状态树，应用的所有状态会集中到一个比较大的对象，当应用变得非常复杂时，store 对象就有可 能变得相当臃肿； 
+
+  - 为了解决以上问题，Vuex 允许我们将 store 分割成模块（module）； 
+
+  - 每个模块拥有自己的 state、mutation、action、getter、甚至是嵌套子模块；
+
+    ![image-20210722134718098](img/image-20210722134718098.png)
+
+### module的局部状态
+
+- 对于模块内部的 mutation 和 getter，接收的第一个参数是模块的局部状态对象：
+
+  ![image-20210722134734102](img/image-20210722134734102.png)
+
+### module的命名空间
+
+- 默认情况下，模块内部的action和mutation仍然是注册在全局的命名空间中的：
+
+  - 这样使得多个模块能够对同一个 action 或 mutation 作出响应；
+  - Getter 同样也默认注册在全局命名空间；
+
+- 如果我们希望模块具有更高的封装度和复用性，可以添加 namespaced: true 的方式使其成为带命名空间的模块：
+
+  - 当模块被注册后，它的所有 getter、action 及 mutation 都会自动根据模块注册的路径调整命名；
+
+    ![image-20210722134752918](img/image-20210722134752918.png)
+
+### module修改或派发根组件
+
+- 如果我们希望在action中修改root中的state，那么有如下的方式：
+
+  ![image-20210722134811219](img/image-20210722134811219.png)
+
+### module的辅助函数
+
+- 如果辅助函数有三种使用方法：
+
+  - 方式一：通过完整的模块空间名称来查找；
+  - 方式二：第一个参数传入模块空间名称，后面写上要使用的属性；
+  - 方式三：通过 createNamespacedHelpers 生成一个模块的辅助函数；
+
+  ![image-20210722134828906](img/image-20210722134828906.png)
+
+  ![image-20210722134843278](img/image-20210722134843278.png)
+
+### 对useState和useGetters修改
+
+![image-20210722134906023](img/image-20210722134906023.png)
+
+### vuex总结
+
+- 核心就是store（仓库）：其他就是对zhang
+  - state——存储状态（数据库）
+  - getters——对数据加工后返回（获取数据库中的数据）
+  - Mutation——改变状态（修改数据库）
+  - actions——异步操作（处理数据后修改数据库）
+  - module——模块化管理（分表？？） 
+
+- state
+
+  1. 可以直接获取到值
+
+     ![image-20210722144400843](img/image-20210722144400843.png)
+
+  2. 使用mapState辅助函数，计算属性 （每有一个数据就要写一个，还是过与麻烦）
+
+     1. 导入mapState
+
+        ```js
+        import { mapState } from "vuex";
+        ```
+
+     2. 引入state属性,并用扩展运算符将导出的状态映射给计算属性
+
+        ```vue
+        computed: {
+          ...mapState(["count"]),
+          
+          ...mapState({
+          	sCount: state => state.count
+          })
+        },
+        ```
+
+     3. 使用
+
+        ```html
+        <div>{{ count }}</div>
+        <div>{{ sCount }}</div>
+        ```
+
+  3. **在setup中对mapState和useState进行封装**
+
+     ```js
+     import { computed } from 'vue'
+     import { mapState, useStore } from 'vuex'
+     
+     export function useState(mapper) {
+       // 拿到store
+       const store = useStore()
+     
+       // 获取到对应的对象的functions: {name: function, age: function}
+       const storeStateFns = mapState(mapper)
+     
+       // 对数据进行转换
+       const storeState = {}
+       Object.keys(storeStateFns).forEach(fnKey => {
+         const fn = storeStateFns[fnKey].bind({$store: store})
+         storeState[fnKey] = computed(fn)
+       })
+     
+       return storeState
+     }
+     ```
+
+- getters
+
+  - 可以直接获取到值
+
+    ![image-20210722160646233](img/image-20210722160646233.png)
+
+  - 使用mapGetters辅助函数，计算属性 （每有一个数据就要写一个，还是过与麻烦）
+
+  - **在setup中对mapGetters和useState进行封装**
+
+    ```js
+    import { computed } from 'vue'
+    import { mapGetters, useStore } from 'vuex'
+    
+    export function useGetters(mapper) {
+      // 拿到store独享
+      const store = useStore()
+    
+      // 获取到对应的对象的functions: {name: function, age: function}
+      const storeStateFns = mapGetters(mapper)
+    
+      // 对数据进行转换
+      const storeState = {}
+      Object.keys(storeStateFns).forEach(fnKey => {
+        const fn = storeStateFns[fnKey].bind({$store: store})
+        storeState[fnKey] = computed(fn)
+      })
+    
+      return storeState
+    }
+    ```
+
+- mutation
+
+  - 基础提交方式
+
+    ```
+    methods: {
+        addTen() {
+            // this.$store.commit('incrementN', 10)
+            // this.$store.commit('incrementN', {n: 10, name: "why", age: 18})
+            // 另外一种提交风格
+            this.$store.commit({
+                type: INCREMENT_N,
+                n: 10, 
+                name: "why", 
+                age: 18
+            })
+        }
+    }
+    ```
+
+  - 借助辅助函数
+
+    ```js
+    methods: {
+        ...mapMutations(["increment", "decrement", INCREMENT_N]),
+        ...mapMutations({
+        	add: "increment"
+        })
+        },
+        setup() {
+        	const storeMutations = mapMutations(["increment", "decrement", INCREMENT_N])
+            return {
+                ...storeMutations
+            }
+    }
+    ```
+
+- action
+
+  - 由于直接在`mutation`方法中进行异步操作，将会引起数据失效。所以提供了Actions来专门进行异步操作，最终提交`mutation`方法。
+
+  - 举个例子，比如在页面修改了数据后，给后台发送一个请求，但是等待后台返回数据后再决定是否修改store中的数据
+
+  - 基础使用
+
+    ```js
+    methods: {
+        increment() {
+            this.$store.dispatch("incrementAction", {count: 100})
+        },
+        decrement() {
+            // 3.派发风格(对象类型)
+            this.$store.dispatch({
+                type: "decrementAction"
+            })
+        }
+    },
+        mounted() {
+            this.$store.dispatch("getHomeMultidata")
+        },
+            setup() {
+            }
+    }
+    ```
+
+  - 辅助函数
+
+    ```js
+    <script>
+      import { mapActions } from 'vuex'
+    
+      export default {
+        methods: {
+          // ...mapActions(["incrementAction", "decrementAction"]),
+          // ...mapActions({
+          //   add: "incrementAction",
+          //   sub: "decrementAction"
+          // })
+        },
+        setup() {
+          const actions = mapActions(["incrementAction", "decrementAction"])
+          const actions2 = mapActions({
+            add: "incrementAction",
+            sub: "decrementAction"
+          })
+    
+          return {
+            ...actions,
+            ...actions2
+          }
+        }
+      }
+    </script>
+    ```
+
+- module
+
+  - 每个模块拥有自己的 `state、mutation、action、getter`、甚至是嵌套子模块——从上至下进行同样方式的分割。
+
+  - 基本使用
+
+    ```html
+    <div>
+      <h2>{{ $store.state.rootCounter }}</h2>
+      <h2>{{ $store.state.home.homeCounter }}</h2>
+      <h2>{{ $store.state.user.userCounter }}</h2>
+    </div>
+    ```
+
+    
 
 
 

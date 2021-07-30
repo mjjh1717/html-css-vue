@@ -1,0 +1,77 @@
+body {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: darkslategray;
+}
+
+.parrot {
+	font-size: 30px;
+	width: 10em;
+	height: 10em;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transform: rotate(45deg);
+}
+
+.parrot > * {
+	position: absolute;
+	box-sizing: border-box;
+}
+
+/* eye */
+.parrot::before {
+	content: '';
+	position: relative;
+	width: 1em;
+	height: 1em;
+	background-color: black;
+	border-radius: 50%;
+	z-index: 1;
+	left: -1em;
+	transform-origin: 1em 0;
+}
+
+.parrot .outer {
+	width: 100%;
+	height: 100%;
+	border: 1em solid;
+	border-color: transparent transparent orangered tomato;
+	border-radius: 50%;
+}
+
+.parrot .middle {
+	width: 80%;
+	height: 80%;
+	border: 4em solid;
+	border-color: gold transparent gainsboro white;
+	border-radius: 50%;
+}
+
+.parrot .inner {
+	width: 40%;
+	height: 40%;
+	border: 2em solid;
+	border-color: transparent orange transparent transparent;
+	border-radius: 50%;
+}
+
+.parrot:nth-child(2) .outer {
+	border-color: lightseagreen darkcyan transparent transparent;
+}
+
+.parrot:nth-child(2) .middle {
+	border-color: white gainsboro transparent orange ;
+}
+
+.parrot:nth-child(2) .inner {
+	border-color: transparent transparent gold transparent ;
+}
+
+.parrot:nth-child(2)::before {
+	transform: rotate(180deg);
+}

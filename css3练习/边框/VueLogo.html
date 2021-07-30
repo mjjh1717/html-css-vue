@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body {
+			margin: 3em;
+			background-color: #eee;
+		}
+
+		section {
+			font-size: 10px;
+			position: relative;
+		}
+
+		section div {
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-color: currentColor transparent transparent transparent;
+			border-width: 20em 12.5em 0 12.5em;
+		}
+
+		section .div1 {
+			color: #42b883;
+		}
+
+		section .div2 {
+			color: #35495e;
+			transform-origin: top;
+			transform: scale(0.65);
+		}
+
+		section .div3 {
+			color: white;
+			transform-origin: top;
+			transform: scale(calc(0.65 * 0.5));
+		}
+
+		section:first-of-type div {
+			outline: 1px dashed black;
+		}
+
+		section:last-of-type div {
+			right: 0;
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<div class="div1"></div>
+		<div class="div2"></div>
+		<div class="div3"></div>
+	</section>
+
+	<section>
+		<div class="div1"></div>
+		<div class="div2"></div>
+		<div class="div3"></div>
+	</section>
+</body>
+</html>

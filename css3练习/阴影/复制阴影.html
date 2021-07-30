@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../common/note.js"></script>
+    <script>new Note('5-8').render()</script>
+    <style>
+        body {
+            width: 30em;
+            margin-top: 5em;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cross {
+            font-size: 60px;
+            width: 1em;
+            height: 1em;
+            color: orange;
+            border-radius: 50%;
+            border: 1px dashed black;
+        }
+
+        .cross:nth-child(1) {
+            box-shadow:
+                1.1em 0em,
+                0em 1.1em,
+                1.1em 1.1em,
+                2.2em 1.1em,
+                1.1em 2.2em;
+        }
+
+        .cross:nth-child(2) {
+            background-color: currentColor;
+            box-shadow: 
+                0em -1.1em 0 -0.1em tomato,
+                -1.1em 0em 0 0.2em gold,
+                1.1em 0em 0 0.2em gold,
+                0em 1.1em 0 0.1em;
+        }
+    </style>
+</head>
+<body>
+    <figure class="cross"></figure>
+    <figure class="cross"></figure>
+</body>
+</html>

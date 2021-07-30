@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 5em;
+      background-color: lightblue;
+    }
+    
+    .battery {
+      font-size: 30px;
+      width: 6em;
+      height: 3em;
+      color: midnightblue;
+      border: 0.5em solid;
+      border-radius: 0.2em;
+      position: relative;
+      background-image: linear-gradient(to right, whitesmoke, whitesmoke);
+      background-repeat: no-repeat;
+      background-size: 10% 80%;
+      background-position: 0.3em 0.3em;
+      transition: 5s steps(6);
+    }
+    
+    .battery:hover {
+      background-size: 90% 80%;
+    }
+    
+    .battery::after {
+      content: '';
+      position: absolute;
+      width: 0.5em;
+      height: 2em;
+      background-color: currentColor;
+      top: 0.5em;
+      right: -1em;
+      border-radius: 0 0.2em 0.2em 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="battery"></div>
+</body>
+
+</html>

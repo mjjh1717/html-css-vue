@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../common/note.js"></script>
+    <script>new Note('5-7').render()</script>
+    <style>
+        body {
+            margin: 3em;
+            display: flex;
+        }
+
+        .container {
+            width: 18em;
+            height: 14em;
+            margin: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: lightgray;
+        }
+
+        .container .inner {
+            width: 8em;
+            height: 8em;
+            background-color: #eee;
+            box-shadow: 
+                0 0 0 0.5em hsla(19, 56%, 40%, 0.8),
+                0 0 0 0.8em hsl(48, 100%, 93%, 0.8),
+                0 0 1em 1em hsla(19, 56%, 40%, 0.8);
+        }
+
+        .container:nth-child(2) .inner {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <figure class="container">
+        <div class="inner"></div>
+    </figure>
+
+    <figure class="container">
+        <div class="inner"></div>
+    </figure>
+</body>
+</html>

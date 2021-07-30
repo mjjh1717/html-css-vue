@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 5em;
+        }
+
+        .droplets {
+            font-size: 20px;
+            width: 12em;
+            height: 15em;
+            box-shadow: 
+                0 0 0 2em white,
+                0 0 1em 2.5em hsla(0, 0%, 0%, 0.1);
+            position: relative;
+        }
+
+        .droplets div {
+            position: absolute;
+            width: 4em;
+            height: 4em;
+            border-radius: 50%;
+            color: dodgerblue;
+            background-color: currentColor;
+        }
+
+        .droplets div::before{
+            content: "";
+            position: absolute;
+            border-left: 1.6em solid transparent;
+            border-right: 1.6em solid transparent;
+            border-bottom: 3em solid;
+            top: -2.2em;
+            left: 0.4em;
+        }
+
+        .droplets div:nth-child(1) {left: 5em; top: 2em;}
+        .droplets div:nth-child(2) {left: 0; top: 4em;}
+        .droplets div:nth-child(3) {right: 0; top: 10em;}
+
+        .droplets div:nth-child(2) {transform: scale(0.65);}
+        .droplets div:nth-child(3) {transform: scale(1.3);}
+    </style>
+</head>
+<body>
+    <figure class="droplets">
+        <div></div>
+        <div></div>
+        <div></div>
+    </figure>
+</body>
+</html>

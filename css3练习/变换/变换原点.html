@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 5em;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin: 3em 0 8em 0;
+        }
+
+        .container:nth-child(1) {width: 17.5em;}
+        .container:nth-child(2) {width: 40em;}
+
+        .container div {
+            font-size: 10px;
+            width: 10em;
+            height: 10em;
+            outline: 1px dashed gray;
+            position: relative;
+        }
+
+        .container div::before {
+            content: '';
+            position: absolute;
+            width: 1em;
+            height: 1em;
+            background-color: lightcoral;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .container div::after {
+            content: '';
+            position: absolute;
+            width: inherit;
+            height: inherit;
+            background-color: moccasin;
+            filter: opacity(0.8);
+            transform: rotate(45deg);
+        }
+
+        .container:first-child div:first-child::after {
+            transform: rotate(0deg);
+        }
+
+        .container:nth-child(1) div::before {
+            left: calc((100% - 1em) / 2);
+            top: calc((100% - 1em) / 2);
+        }
+
+        .container:nth-child(2) div:nth-child(1):before {
+            left: calc((100% - 1em) / 2);
+            top: -0.5em;
+        }
+
+        .container:nth-child(2) div:nth-child(1):after {
+            transform-origin: top;
+        }
+
+        .container:nth-child(2) div:nth-child(2):before {
+            right: -0.5em;
+            top: calc((100% - 1em) / 2);
+        }
+
+        .container:nth-child(2) div:nth-child(2):after {
+            transform-origin: right;
+        }
+
+        .container:nth-child(2) div:nth-child(3):before {
+            left: calc((100% - 1em) / 2);
+            bottom: -0.5em;
+        }
+
+        .container:nth-child(2) div:nth-child(3):after {
+            transform-origin: bottom;
+        }
+
+        .container:nth-child(2) div:nth-child(4):before {
+            left: -0.5em;
+            top: calc((100% - 1em) / 2);
+        }
+
+        .container:nth-child(2) div:nth-child(4):after {
+            transform-origin: left;
+        }
+    </style>
+</head>
+<body>
+    <figure class="container">
+        <div></div>
+        <div></div>
+    </figure>
+    
+    <figure class="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </figure>
+</body>
+</html>

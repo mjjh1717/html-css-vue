@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../common/note.js"></script>
+    <script>new Note('6-14').render()</script>
+    <style>
+        body {
+            margin: 2em;
+        }
+        
+        .container {
+            font-size: 10px;
+            display: flex;
+        }
+
+        .container div {
+            width: 5em;
+            height: 5em;
+            border-radius: 50%;
+            background-color: hsl(0, 100%, 70%);
+            margin: 0.5em;
+        }
+
+        .container div:nth-child(1) {filter: blur(0px) hue-rotate(0deg); }
+        .container div:nth-child(2) {filter: blur(2px) hue-rotate(20deg);}
+        .container div:nth-child(3) {filter: blur(4px) hue-rotate(40deg);}
+        .container div:nth-child(4) {filter: blur(6px) hue-rotate(60deg);}
+        .container div:nth-child(5) {filter: blur(8px) hue-rotate(80deg);}
+    </style>
+</head>
+<body>
+    <figure class="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </figure>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .qq {
+      font-size: 10px;
+      box-sizing: border-box;
+      width: 20em;
+      height: 22em;
+      color: orange;
+      border: 3em solid;
+      border-radius: 50%;
+      filter: drop-shadow(21em 0);
+      margin: 4em 2em;
+    }
+    
+    .qq::before {
+      content: '';
+      position: absolute;
+      width: 10em;
+      height: 5em;
+      top: 11em;
+      left: 9em;
+      background-color: currentColor;
+      border-radius: 50%;
+      transform: rotate(45deg);
+    }
+    
+    .qq:nth-child(2) {
+      background-color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <figure class="qq"></figure>
+  <figure class="qq"></figure>
+</body>
+
+</html>

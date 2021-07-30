@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: lightgoldenrodyellow;
+}
+
+.eye {
+  width: 10em;
+  height: 10em;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.eye div {
+  position: absolute;
+  --diameter: calc(10em - (var(--n) - 1) * 1em);
+  width: var(--diameter);
+  height: var(--diameter);
+  border-radius: 50%;
+}
+
+.eye div:nth-child(odd) {
+  background-color: darkred;
+}
+
+.eye div:nth-child(even) {
+  background-color: gold;
+}
+
+.eye div:nth-child(n+8) {
+  top: calc((var(--n) - 7) * 1em);
+}
+
+.eye div:nth-child(1) {
+  --n: 1;
+}
+
+.eye div:nth-child(2) {
+  --n: 2;
+}
+
+.eye div:nth-child(3) {
+  --n: 3;
+}
+
+.eye div:nth-child(4) {
+  --n: 4;
+}
+
+.eye div:nth-child(5) {
+  --n: 5;
+}
+
+.eye div:nth-child(6) {
+  --n: 6;
+}
+
+.eye div:nth-child(7) {
+  --n: 7;
+}
+
+.eye div:nth-child(8) {
+  --n: 8;
+}
+
+.eye div:nth-child(9) {
+  --n: 9;
+}
+
+.eye div:nth-child(10) {
+  --n: 10;
+}
+
+.eye {
+  animation: rotating 5s linear infinite;
+}
+
+@keyframes rotating {
+  to {
+    transform: rotate(1turn);
+  }
+}

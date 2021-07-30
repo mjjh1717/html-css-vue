@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+        }
+
+        .web-development {
+            margin: 2em;
+            padding: 0 1em;
+            border-radius: 1em;
+            background-color: lavender;
+            box-shadow: 0.3em 0.3em 1em hsla(0, 0%, 70%, 0.8);
+        }
+
+        .web-development p {
+            font-size: 30px;
+            font-family: sans-serif;
+            font-weight: bold;
+            color: slateblue;
+        }
+
+        .web-development p::before,
+        .web-development p::after {
+            color: tomato;
+        }
+
+        .web-development:nth-child(2) .html::before { content: '<'; }
+        .web-development:nth-child(2) .html::after { content: '/>'; }
+
+        .web-development:nth-child(2) .css::before { content: '.'; }
+        .web-development:nth-child(2) .css::after { content: '::'; }
+
+        .web-development:nth-child(2) .js::before { content: '{'; }
+        .web-development:nth-child(2) .js::after { content: '}'; }
+
+        .web-development:nth-child(3) p::before { content: attr(data-before); }
+        .web-development:nth-child(3) p::after { content: attr(data-after); }
+    </style>
+</head>
+<body>
+    <div class="web-development">
+        <p class="html">html</p>
+        <p class="css">css</p>
+        <p class="js">javascript</p>
+    </div>
+
+    <div class="web-development">
+        <p class="html">html</p>
+        <p class="css">css</p>
+        <p class="js">javascript</p>
+    </div>
+
+    <div class="web-development">
+        <p data-before="&lt;" data-after="/&gt;">html</p>
+        <p data-before="." data-after="::">css</p>
+        <p data-before="{" data-after="}">javascript</p>
+    </div>
+</body>
+</html>

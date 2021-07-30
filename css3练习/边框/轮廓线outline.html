@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body {
+			margin: 10em 3em;
+		}
+
+		section {
+			display: flex;
+			justify-content: space-around;
+		}
+
+		section .div1,
+		section .div2 {
+			width: 10em;
+			height: 10em;
+			background-color: #ccc;
+			border: 0.5em solid dodgerblue;
+			outline: 0.5em solid orange;
+		}
+
+		section .div2 {
+			border-radius: 50%;
+		}
+
+		section .div3 {
+			width: 0;
+			height: 0;
+			border: 5em solid;
+			border-color: transparent dodgerblue dodgerblue transparent;
+			border-radius: 50%;
+			transform: rotate(45deg);
+			outline: 1px dashed black;
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<div class="div1"></div>
+		<div class="div2"></div>
+		<div class="div3"></div>
+	</section>
+</body>
+</html>

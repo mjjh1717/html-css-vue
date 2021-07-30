@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 2em;
+    }
+    
+    .container {
+      display: flex;
+    }
+    
+    .container div {
+      font-size: 10px;
+      width: 10em;
+      height: 10em;
+      background-color: lightgreen;
+      margin: 1em;
+    }
+    
+    .container div:hover {
+      border-radius: 50%;
+      background-color: lightcoral;
+    }
+    
+    .container div:nth-child(1) {
+      transition: 0.5s;
+    }
+    
+    .container div:nth-child(2):hover {
+      transition: 0.5s;
+    }
+    
+    .container div:nth-child(3) {
+      transition: 0.5s;
+    }
+    
+    .container div:nth-child(3):hover {
+      transition: 1s steps(3);
+    }
+  </style>
+</head>
+
+<body>
+  <figure class="container">
+    <div></div>
+    <div></div>
+    <div></div>
+  </figure>
+</body>
+
+</html>

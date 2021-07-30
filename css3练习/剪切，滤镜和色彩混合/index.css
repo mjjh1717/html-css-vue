@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightyellow;
+}
+
+.lotus {
+    width: 20em;
+    height: 11.5em;
+    position: relative;
+}
+
+.lotus div {
+    position: absolute;
+    box-sizing: border-box;
+    width: 10em;
+    height: 3em;
+    border: 0.2em solid dimgray;
+    border-radius: 50%;
+    background-color: hsl(60, 100%, 50%);
+    transform-origin: right;
+    top: calc((20em - 3em) / 2);
+    box-shadow: 0 0 1em hsla(0, 0%, 0%, 0.5);
+}
+
+.lotus div:nth-child(2) { transform: rotate(20deg); }
+.lotus div:nth-child(3) { transform: rotate(40deg); }
+.lotus div:nth-child(4) { transform: rotate(60deg); }
+.lotus div:nth-child(5) { transform: rotate(80deg); }
+.lotus div:nth-child(6) { transform: rotate(100deg); }
+.lotus div:nth-child(7) { transform: rotate(120deg); }
+.lotus div:nth-child(8) { transform: rotate(140deg); }
+.lotus div:nth-child(9) { transform: rotate(160deg); }
+.lotus div:nth-child(10) { transform: rotate(180deg); }
+
+.lotus div:nth-child(2) { filter: hue-rotate(30deg); }
+.lotus div:nth-child(3) { filter: hue-rotate(60deg); }
+.lotus div:nth-child(4) { filter: hue-rotate(90deg); }
+.lotus div:nth-child(5) { filter: hue-rotate(120deg); }
+.lotus div:nth-child(6) { filter: hue-rotate(150deg); }
+.lotus div:nth-child(7) { filter: hue-rotate(180deg); }
+.lotus div:nth-child(8) { filter: hue-rotate(210deg); }
+.lotus div:nth-child(9) { filter: hue-rotate(240deg); }
+.lotus div:nth-child(10) { filter: hue-rotate(270deg); }

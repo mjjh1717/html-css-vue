@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 2em;
+    }
+    
+    .container {
+      font-size: 10px;
+      display: flex;
+    }
+    
+    .container div {
+      width: 5em;
+      height: 5em;
+      border-radius: 50%;
+      background-image: linear-gradient(to right bottom, lightcoral 50%, lightgreen 50%);
+      margin: 0.5em;
+    }
+    
+    .container div:nth-child(1) {
+      filter: blur(0px);
+    }
+    
+    .container div:nth-child(2) {
+      filter: blur(2px);
+    }
+    
+    .container div:nth-child(3) {
+      filter: blur(4px);
+    }
+    
+    .container div:nth-child(4) {
+      filter: blur(6px);
+    }
+    
+    .container div:nth-child(5) {
+      filter: blur(8px);
+    }
+  </style>
+</head>
+
+<body>
+  <figure class="container">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </figure>
+</body>
+
+</html>

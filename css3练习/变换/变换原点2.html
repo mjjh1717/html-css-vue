@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 2em;
+            display: flex;
+        }
+
+        .clock {
+            font-size: 5px;
+            position: relative;
+            width: 25em;
+            height: 25em;
+            border-radius: 50%;
+            color: seagreen;
+            border: 2.5em solid;
+            background: radial-gradient(currentColor 10%, transparent 10.5%);
+        }
+
+        .hand {
+            background-color: currentColor;
+            width: 1em;
+            position: absolute;
+            left: calc((100% - 1em) / 2);
+            transform-origin: bottom;
+        }
+
+        .hand.hour {height: 8em; top: 4.5em;}
+        .hand.minute {height: 10em; top: 2.5em;}
+
+        .clock:nth-child(2) .hand.hour {transform: rotate(305deg);}
+        .clock:nth-child(2) .hand.minute {transform: rotate(60deg);}
+    </style>
+</head>
+<body>
+    <figure class="clock">
+        <div class="hand hour"></div>
+        <div class="hand minute"></div>
+    </figure>
+
+    <figure class="clock">
+        <div class="hand hour"></div>
+        <div class="hand minute"></div>
+    </figure>
+</body>
+</html>

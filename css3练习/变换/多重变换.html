@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            margin: 5em;
+        }
+
+        .container {
+            font-size: 10px;
+            width: 10em;
+            height: 10em;
+            margin: 1em;
+            outline: 1px dashed gray;
+        }
+
+        .container div {
+            width: 4em;
+            height: 4em;
+            background-color: deepskyblue;
+        }
+
+        .container:nth-child(2) div {transform: translate(3em, 3em);}
+        .container:nth-child(3) div {transform: translate(3em, 3em) scale(1.5, 1.5);}
+        .container:nth-child(4) div {transform: translate(3em, 3em) scale(1.5, 1.5) rotate(45deg);}
+        
+    </style>
+</head>
+<body>
+    <figure class="container">
+        <div></div>
+    </figure>
+
+    <figure class="container">
+        <div></div>
+    </figure>
+
+    <figure class="container">
+        <div></div>
+    </figure>
+
+    <figure class="container">
+        <div></div>
+    </figure>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body {
+		    margin: 10em;
+		    background-color: teal;
+		}
+
+		.fox *::before,
+		.fox *::after {
+		    content: '';
+		    position: absolute;
+		}
+
+		.fox {
+		    width: 7em;
+		    height: 9em;
+		    font-size: 30px;
+		    position: relative;
+		    color: chocolate;
+		    transition: 1s;
+		}
+
+		.fox .head {
+		    position: absolute;
+		    width: 6em;
+		    height: 6em;
+		    background-color: currentColor;
+		    border-radius: 50%;
+		    right: 0;
+		}
+
+		.fox .faces::before,
+		.fox .faces::after {
+		    width: 3em;
+		    height: 3em;
+		    background-color: white;
+		    border-radius: 0 100%;
+		    top: 3em;
+		}
+
+		.fox .faces::after,
+		.fox .ears::after {
+		    right: 0;
+		    transform: rotate(-90deg);
+		}
+
+		.fox .eyes::before,
+		.fox .eyes::after {
+		    border: 0.3em solid;
+		    border-radius: 50%;
+		    top: 4.5em;
+		}
+
+		.fox .eyes::before {
+		    left: 1em;
+		    border-color: black black transparent transparent;
+		}
+
+		.fox .eyes::after {
+		    right: 1em;
+		    border-color: black transparent transparent black;
+		}
+
+		.fox .ears::before,
+		.fox .ears::after {
+		    width: 3em;
+		    height: 3em;
+		    background-color: currentColor;
+		    filter: brightness(1.25);
+		    border-radius: 0 100% 0 0;
+		    z-index: -1;
+		}
+
+		.fox .nose{
+		    position: absolute;
+		    width: 1em;
+		    height: 1em;
+		    background-color: black;
+		    border-radius: 50%;
+		    top: calc(6em - 1em / 2);
+		    right: calc((6em - 1em) / 2);
+		    transform: scale(0.9);
+		}
+	</style>
+</head>
+<body>
+	<div class="fox">
+		<div class="head">
+            <span class="faces"></span>
+            <span class="eyes"></span>
+            <span class="ears"></span>
+            <span class="nose"></span>
+        </div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      display: flex;
+      background-color: silver;
+    }
+    
+     :root {
+      --egg-color: white;
+      --yolk-color: orange;
+    }
+    
+    .egg {
+      width: 10em;
+      height: 10em;
+      background-color: var(--egg-color);
+      border-radius: 50% / 30% 60%;
+      margin: 3em 0 0 5em;
+    }
+    
+    .egg .yolk {
+      position: relative;
+      width: 45%;
+      height: 45%;
+      top: 25%;
+      left: 25%;
+      border-radius: 50%;
+      background-color: var(--yolk-color);
+    }
+    
+    .egg:nth-child(2) {
+      --egg-color: lightyellow;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="egg">
+    <div class="yolk"></div>
+  </div>
+  <div class="egg">
+    <div class="yolk"></div>
+  </div>
+</body>
+
+</html>

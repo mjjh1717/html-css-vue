@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 5em;
+            background-color: lightyellow;
+            display: flex;
+        }
+
+        .heart {
+            width: 14em;
+            height: 11em;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .heart div {
+            width: 1em;
+            height: 9.5em;
+            background-color: orange;
+            position: relative;
+            transform-origin: top;
+        }
+
+        .line1, .line9 { top: 2.2em; }
+        .line2, .line8 { top: 0.6em; }
+        .line3, .line7 { top: 0; }
+        .line4, .line6 { top: 0.8em; }
+        .line5 { top: 1.6em; }
+
+        .heart:nth-child(2) .heart div {
+            transform-origin: top;
+        }
+
+        .heart:nth-child(2) .line1, .heart:nth-child(2) .line9 { transform: scaleY(0.32); }
+        .heart:nth-child(2) .line2, .heart:nth-child(2) .line8 { transform: scaleY(0.64); }
+        .heart:nth-child(2) .line3, .heart:nth-child(2) .line7 { transform: scaleY(0.85); }
+        .heart:nth-child(2) .line4, .heart:nth-child(2) .line6 { transform: scaleY(0.96); }
+        .heart:nth-child(2) .line5 { transform: scaleY(1); }
+    </style>
+</head>
+<body>
+    <figure class="heart">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+        <div class="line4"></div>
+        <div class="line5"></div>
+        <div class="line6"></div>
+        <div class="line7"></div>
+        <div class="line8"></div>
+        <div class="line9"></div>
+    </figure>
+
+    <figure class="heart">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+        <div class="line4"></div>
+        <div class="line5"></div>
+        <div class="line6"></div>
+        <div class="line7"></div>
+        <div class="line8"></div>
+        <div class="line9"></div>
+    </figure>
+</body>
+</html>

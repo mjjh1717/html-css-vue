@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../common/note.js"></script>
+    <script>new Note('9-8').render()</script>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            margin: 5em;
+        }
+
+        input {
+            font-size: 30px;
+            width: 12em;
+            height: 1.5em;
+            margin: 0.5em;
+            padding: 0.1em 0.5em;
+            color: dimgray;
+            border-style: solid;
+            border-width: 0 0 0.2em 0;
+            border-color: transparent;
+            box-sizing: border-box;
+            box-shadow: 0 0 0 1em #eee;
+            transition: 0.5s;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        input:nth-child(1):focus {border-color: skyblue;}
+        input:nth-child(2):focus {border-color: lightgreen;}
+        input:nth-child(3):focus {border-color: lightcoral;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+    </div>
+</body>
+</html>

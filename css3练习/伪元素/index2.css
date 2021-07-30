@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgoldenrodyellow;
+}
+
+.monster {
+    width: 10em;
+    height: 13em;
+    color: limegreen;
+    background-color: currentColor;
+    border-radius: 5em 5em 5% 5% / 6em 6em 5% 5%;
+    position: relative;
+}
+
+/* 眼睛 */
+.eye {
+    position: absolute;
+    width: 6.5em;
+    height: 6.5em;
+    background: 
+        radial-gradient(
+            circle at 50% 25%,
+            white 0.4em,
+            transparent 0.4em
+        ),
+        radial-gradient(
+            circle at 50% 40%,
+            black 1.7em,
+            transparent 1.7em
+        ),
+        white;
+    border-radius: 77% 77% 77% 77% / 92% 92% 60% 60%;
+    top: 2em;
+    left: calc((10em - 6.5em) / 2);
+    box-shadow: 0.2em 0.9em 0 hsla(0, 0%, 0%, 0.1);
+}
+
+/* 嘴 */
+.mouth {
+    position: absolute;
+    width: 3em;
+    height: 2.1em;
+    background-color: black;
+    bottom: 0.9em;
+    left: calc((10em - 3em) / 2);
+    border-radius: 70% 70% 3.5em 3.5em;
+    overflow: hidden;
+}
+
+/* 舌头 */
+.mouth::before {
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: 0.6em;
+    background-color: tomato;
+    border-radius: 50% 50% 0 0;
+    bottom: 0;
+}
+
+/* 牙齿 */
+.mouth .teeth,
+.mouth .teeth::before,
+.mouth .teeth::after {
+    content: '';
+    position: absolute;
+    border-top: 0.8em solid white;
+    border-left: 0.4em solid transparent;
+    border-right: 0.4em solid transparent;
+    left: 1.1em;
+}
+
+.mouth .teeth::before {
+    top: -0.8em;
+    left: -1.1em;
+}
+
+.mouth .teeth::after {
+    top: -0.8em;
+    left: 0.3em;
+}
+
+/* 耳朵 */
+.ear {
+    position: absolute;
+    width: 2.4em;
+    height: 4.5em;
+    /* outline: 1px dashed black; */
+    top: -3em;
+    display: flex;
+    justify-content: center;
+    transform-origin: bottom;
+}
+
+.ear::before,
+.ear::after {
+    content: '';
+    position: absolute;
+    background-color: currentColor;
+}
+
+.ear::before {
+    width: 0.9em;
+    height: inherit;
+}
+
+.ear::after {
+    width: 2.4em;
+    height: 2.4em;
+    border-radius: 50%;
+    top: -0.5em;
+    box-shadow: inset -0.3em -0.2em 0 hsla(0, 0%, 0%, 0.1);
+}
+
+.ear.left {
+    left: 2em;
+    transform: rotate(-20deg);
+}
+
+.ear.right {
+    right: 2em;
+    transform: rotate(20deg);
+}

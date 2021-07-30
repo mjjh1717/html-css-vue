@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body {
+			margin: 10em;
+			background-color: white;
+		}
+
+		div.container {
+			box-sizing: border-box;
+			width: 20em;
+			height: 16em;
+			font-size: 10px;
+		    border-color: black;
+		    border-style: solid;
+    		border-width: 0.4em 0.1em 4em 0.1em;
+    		padding: 0 4em 2em 4em;
+    		display: flex;
+    		justify-content: space-between;
+		}
+
+		div.container span {
+		    position: relative;
+		    background-color: black;
+		    width: 0.2em;
+		    height: 10em;
+		}
+
+		div.container span::before {
+		    content: '';
+		    position: absolute;
+		    bottom: 0;
+		    background-color: black;
+		    width: 3em;
+		    height: 3em;
+		    border-radius: 50%;
+		    left: -1.5em;
+		}
+
+		div.container span:nth-child(1) {
+			transform-origin: top;
+			transform: rotate(45deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(black, midnightblue);
+    overflow: hidden;
+}
+
+.spacecraft {
+    width: 11em;
+    height: 15em;
+    position: relative;
+    /*outline: 1px dashed white;*/
+}
+
+.body {
+    position: absolute;
+    width: 7em;
+    height: 11em;
+    background: linear-gradient(whitesmoke, darkgray);
+    border-radius: 50% / 70% 70% 5% 5%;
+    left: 2em;
+    z-index: 1;
+}
+
+.body::before {
+    content: '';
+    position: absolute;
+    box-sizing: border-box;
+    width: 4em;
+    height: 4em;
+    background-color: deepskyblue;
+    border-radius: 50%;
+    border: 0.5em solid lightslategray;
+    top: 3em;
+    left: 1.5em;
+    box-shadow: inset -0.2em 0.2em white;
+}
+
+.engine {
+    position: absolute;
+    width: 6em;
+    height: 2em;
+    background-color: #444;
+    border-radius: 20%;
+    top: 10em;
+    left: 2.5em;
+}
+
+.engine::before {
+    content: '';
+    position: absolute;
+    box-sizing: border-box;
+    width: 4em;
+    height: 4em;
+    background: gold;
+    border-radius: 80% 0 50% 45% / 50% 0 80% 45%;
+    transform: rotate(135deg);
+    border: 0.5em solid orange;
+    left: 1em;
+    z-index: -1;
+}
+
+.fins::before,
+.fins::after {
+    content: '';
+    position: absolute;
+    width: 2em;
+    height: 6em;
+    background: linear-gradient(tomato, darkred);
+    top: 7em;
+}
+
+.fins::before {
+    left: 0;
+    border-radius: 3em 0 50% 100%;
+}
+
+.fins::after {
+    right: 0;
+    border-radius: 0 3em 100% 50%;
+}

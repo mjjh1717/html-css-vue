@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 2em;
+            display: flex;
+        }
+
+        .container {
+            font-size: 50px;
+            width: 3em;
+            height: 5em;
+            border: 1px solid gray;
+            background-color: #eee;
+            background-image:
+                linear-gradient(gray 1px, transparent 1px),
+                linear-gradient(to right,gray 1px, transparent 1px);
+            background-size: 1em 1em;
+            position: relative;
+        }
+
+        .container div {
+            width: 1em;
+            height: 1em;
+            background-color: currentColor;
+            box-sizing: border-box;
+            border-right: 0.2em solid black;
+            position: absolute;
+        }
+
+        .container div:nth-child(1) {color: lightgreen; top: 1em; left: 1em;}
+        .container div:nth-child(2) {color: lightcoral; top: 3em; left: 1em;}
+
+        .container:nth-child(2) div:nth-child(1) {transform: translateX(100%);}
+        .container:nth-child(2) div:nth-child(2) {transform: translateX(-100%);}
+
+        .container:nth-child(3) div:nth-child(1) {transform: translateX(100%);}
+        .container:nth-child(3) div:nth-child(2) {transform: rotate(180deg) translateX(100%);}
+    </style>
+</head>
+<body>
+    <figure class="container">
+        <div></div>
+        <div></div>
+    </figure>
+
+    <figure class="container">
+        <div></div>
+        <div></div>
+    </figure>
+
+    <figure class="container">
+        <div></div>
+        <div></div>
+    </figure>
+</body>
+</html>

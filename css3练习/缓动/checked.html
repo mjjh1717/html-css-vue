@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../common/note.js"></script>
+    <script>new Note('9-9').render()</script>
+    <style>
+        .container {
+            background-color: #eee; 
+            padding: 1em;
+            margin: 2em;
+            font-size: 1.5em;
+            width: 15em;
+            display: flex;
+            justify-content: space-between;
+            box-shadow: 0 0.5em 1em hsla(0, 0%, 0%, 0.2);
+        }
+
+        input {
+            position: absolute;
+            visibility: hidden;
+        }
+
+        label {
+            color: dodgerblue;
+            border-style: solid;
+            border-width: 0 0 0.2em 0;
+            border-color: transparent;
+            transition: 0.3s;
+        }
+
+        input:checked + label {
+            border-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="radio" name="radio-group" id="a">
+        <label for="a">OptionA</label>
+
+        <input type="radio" name="radio-group" id="b">
+        <label for="b">OptionB</label>
+
+        <input type="radio" name="radio-group" id="c">
+        <label for="c">OptionC</label>
+    </div>
+</body>
+</html>

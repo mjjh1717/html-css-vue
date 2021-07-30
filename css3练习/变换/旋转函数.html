@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../common/note.js"></script>
+  <script>
+    new Note('8-5').render()
+  </script>
+  <style>
+    .matches {
+      width: 30em;
+      display: flex;
+      background-color: #eee;
+    }
+    
+    .matches div {
+      font-size: 10px;
+      width: 1em;
+      height: 8em;
+      background-color: burlywood;
+      border-radius: 0.5em 0.5em 0.2em 0.2em;
+      box-sizing: border-box;
+      border-top: 1em solid brown;
+      margin: 4em;
+    }
+    
+    .matches:nth-child(1) div:nth-child(1) {
+      transform: rotate(0deg);
+    }
+    
+    .matches:nth-child(1) div:nth-child(2) {
+      transform: rotate(45deg);
+    }
+    
+    .matches:nth-child(1) div:nth-child(3) {
+      transform: rotate(180deg);
+    }
+    
+    .matches:nth-child(1) div:nth-child(4) {
+      transform: rotate(270deg);
+    }
+    
+    .matches:nth-child(1) div:nth-child(5) {
+      transform: rotate(-45deg);
+    }
+    
+    .matches:nth-child(2) div:nth-child(1) {
+      transform: rotate(0turn);
+    }
+    
+    .matches:nth-child(2) div:nth-child(2) {
+      transform: rotate(0.125turn);
+    }
+    
+    .matches:nth-child(2) div:nth-child(3) {
+      transform: rotate(0.5turn);
+    }
+    
+    .matches:nth-child(2) div:nth-child(4) {
+      transform: rotate(0.75turn);
+    }
+    
+    .matches:nth-child(2) div:nth-child(5) {
+      transform: rotate(-0.125turn);
+    }
+  </style>
+</head>
+
+<body>
+  <figure class="matches">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </figure>
+
+  <figure class="matches">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </figure>
+</body>
+
+</html>

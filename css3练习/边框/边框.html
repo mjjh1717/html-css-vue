@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body {
+			margin: 3em;
+			background-color: white;
+		}
+
+		.container {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+		}
+
+		.container div {
+			width: 15vmin;
+			height: 15vmin;
+			background: linear-gradient(45deg, skyblue 50%, deepskyblue 50%);
+			border-width: 1vmin;
+			margin: 2vmin 0;
+		}
+
+		.container .div1 { border-style: solid; }
+		.container .div2 { border-style: dashed; }
+		.container .div3 { border-style: dotted; }
+		.container .div4 { border-style: double; }
+		.container .div5 { border-style: groove; }
+		.container .div6 { border-style: ridge; }
+		.container .div7 { border-style: inset; }
+		.container .div8 { border-style: outset; }
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="div1"></div>
+		<div class="div2"></div>
+		<div class="div3"></div>
+		<div class="div4"></div>
+		<div class="div5"></div>
+		<div class="div6"></div>
+		<div class="div7"></div>
+		<div class="div8"></div>
+	</div>
+</body>
+</html>

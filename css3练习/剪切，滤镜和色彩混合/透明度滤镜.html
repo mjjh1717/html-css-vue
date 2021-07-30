@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .container {
+      font-size: 10px;
+      display: flex;
+    }
+    
+    .container div {
+      width: 5em;
+      height: 5em;
+      border-radius: 50%;
+      background-image: linear-gradient(to right bottom, lightcoral 50%, lightgreen 50%);
+      margin: 0.5em;
+    }
+    
+    .container div:nth-child(1) {
+      filter: opacity(1);
+    }
+    
+    .container div:nth-child(2) {
+      filter: opacity(0.8);
+    }
+    
+    .container div:nth-child(3) {
+      filter: opacity(0.6);
+    }
+    
+    .container div:nth-child(4) {
+      filter: opacity(0.4);
+    }
+    
+    .container div:nth-child(5) {
+      filter: opacity(0.2);
+    }
+  </style>
+</head>
+
+<body>
+  <figure class="container">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </figure>
+</body>
+
+</html>

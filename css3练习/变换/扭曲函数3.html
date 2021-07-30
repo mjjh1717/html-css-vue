@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 5em;
+            display: flex;
+            background-color: darkslategray;
+        }
+
+        .glass {
+            font-size: 10px;
+            position: relative;
+            width: 7em;
+            height: 10em;
+            color: rgba(255, 255, 255, 0.3);
+            background-color: currentColor;
+            border-radius: 0.5em;
+            margin: 3em;
+        }
+
+        .glass::before {
+            content: '';
+            position: absolute;
+            box-sizing: border-box;
+            width: inherit;
+            height: 6em;
+            border: 1em solid;
+            top: 2em;
+            left: 2em;
+            border-radius: 0 40% 40% 0;
+            clip-path: inset(0 0 0 5em);
+        }
+
+        .glass .beer {
+            position: absolute;
+            width: 6em;
+            height: 8em;
+            background-color: rgba(255, 206, 84, 0.8);
+            bottom: 1.5em;
+            left: calc((7em - 6em) / 2);
+            border-radius: 0 0 0.5em 0.5em;
+        }
+
+        .glass .beer::before {
+            content: '';
+            position: absolute;
+            width: inherit;
+            height: 1.5em;
+            background-color: white;
+            filter: brightness(0.95);
+            border-radius: 0.5em 0.5em 0 0;
+            top: -1em;
+        }
+
+        .glass:nth-child(2) {
+            transform: rotate(-7deg);
+        }
+
+        .glass:nth-child(2) .beer::before {
+            transform: skewY(7deg);
+        }
+    </style>
+</head>
+<body>
+    <figure class="glass">
+        <div class="beer"></div>
+    </figure>
+
+    <figure class="glass">
+        <div class="beer"></div>
+    </figure>
+</body>
+</html>

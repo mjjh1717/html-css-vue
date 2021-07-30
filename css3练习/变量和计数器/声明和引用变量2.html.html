@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 5em;
+      background-color: black;
+    }
+    
+    .cup {
+      --bubble-1: radial-gradient( circle at 35% 40%, lightblue 0.1em, transparent 0.4em);
+      --bubble-2: radial-gradient( circle at 65% 60%, lightblue 0.1em, transparent 0.3em);
+      --bubble-3: radial-gradient( circle at 45% 80%, lightblue 0.1em, transparent 0.2em);
+      --bubbles: var(--bubble-1), var(--bubble-2), var(--bubble-3);
+      font-size: 30px;
+      width: 2em;
+      height: 4em;
+      background: var(--bubbles), linear-gradient( to bottom, lightskyblue 25%, transparent 25%), dodgerblue;
+      bottom: calc((100% - 7.5em) / 2);
+      left: calc(2.5em + (6em - 2em) / 2);
+      clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+    }
+  </style>
+</head>
+
+<body>
+  <figure class="cup"></figure>
+</body>
+
+</html>

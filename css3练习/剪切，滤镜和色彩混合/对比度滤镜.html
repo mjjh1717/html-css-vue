@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 2em;
+      background-color: darkslategray;
+    }
+    
+    .container div {
+      width: 90vw;
+      height: 5em;
+      outline: 1px dashed lime;
+      background-image: linear-gradient( to right, #ddd 10%, #ccc 10%, #ccc 20%, #bbb 20%, #bbb 30%, #aaa 30%, #aaa 40%, #999 40%, #999 50%, #888 50%, #888 60%, #777 60%, #777 70%, #666 70%, #666 80%, #555 80%, #555 90%, #444 90%);
+    }
+    
+    .container div:nth-child(1) {
+      filter: contrast(1);
+    }
+    
+    .container div:nth-child(2) {
+      filter: contrast(1.2);
+    }
+    
+    .container div:nth-child(3) {
+      filter: contrast(2);
+    }
+    
+    .container div:nth-child(4) {
+      filter: contrast(3);
+    }
+    
+    .container div:nth-child(5) {
+      filter: contrast(10);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</body>
+
+</html>

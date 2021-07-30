@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rainbow {
+  width: 20em;
+  height: 10em;
+  position: relative;
+  display: flex;
+}
+
+.rainbow div {
+  box-sizing: border-box;
+  flex: 1;
+  background-color: currentColor;
+  filter: opacity(0.6);
+}
+
+.rainbow:hover {
+  align-items: center;
+  justify-content: center;
+  transform: translateY(5em);
+}
+
+.rainbow:hover div {
+  position: absolute;
+  width: calc(100% - 2em * (var(--n) - 1));
+  height: calc(200% - 2em * (var(--n) - 1));
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1em solid;
+  border-color: transparent currentColor currentColor transparent;
+  transform: rotate(225deg);
+  filter: opacity(1);
+}
+
+.rainbow {
+  transition: 1s;
+}
+
+.rainbow div {
+  transition: 0.5s;
+  transition-delay: calc(0.1s * var(--n));
+}
+
+.rainbow div:nth-child(1) {
+  color: orangered;
+}
+
+.rainbow div:nth-child(2) {
+  color: orange;
+}
+
+.rainbow div:nth-child(3) {
+  color: yellow;
+}
+
+.rainbow div:nth-child(4) {
+  color: mediumspringgreen;
+}
+
+.rainbow div:nth-child(5) {
+  color: deepskyblue;
+}
+
+.rainbow div:nth-child(6) {
+  color: mediumpurple;
+}
+
+.rainbow div:nth-child(1) {
+  --n: 1;
+}
+
+.rainbow div:nth-child(2) {
+  --n: 2;
+}
+
+.rainbow div:nth-child(3) {
+  --n: 3;
+}
+
+.rainbow div:nth-child(4) {
+  --n: 4;
+}
+
+.rainbow div:nth-child(5) {
+  --n: 5;
+}
+
+.rainbow div:nth-child(6) {
+  --n: 6;
+}

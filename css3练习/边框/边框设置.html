@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            margin: 3em;
+        }
+
+        .container div {
+            font-size: 20px;
+            width: 5em;
+            height: 5em;
+            margin: 0 0.5em;
+            outline: 1px dashed black;
+        }
+
+        .container div:nth-child(1) {align-self: center;}
+
+        .container:nth-child(1) div {color: lightgreen;}
+        .container:nth-child(2) div {color: lightcoral; border-radius: 50%;}
+
+        .container div:nth-child(1) {border: none;}
+        .container div:nth-child(2) {border: 1em solid currentColor;}
+
+        .container div:nth-child(3) {
+            border-width: 1em;
+            border-style: solid;
+            border-color: currentColor transparent transparent transparent;}
+        
+        .container div:nth-child(4) {
+            border-width: 1em;
+            border-style: solid none none none;
+            border-color: currentColor;
+        }
+        
+        .container div:nth-child(5) {
+            border-width: 1em 0 0 0;
+            border-style: solid;
+            border-color: currentColor;
+        }
+    </style>
+</head>
+<body>
+    <figure class="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </figure>
+
+    <figure class="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </figure>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 2em;
+      width: 55em;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    
+    .container {
+      width: 15em;
+      height: 12em;
+      margin: 1em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 2em 1em;
+    }
+    
+    .container .inner {
+      width: 8em;
+      height: 5.5em;
+      border: 1px solid black;
+      background-color: white;
+    }
+    
+    .container:nth-child(-n+3) {
+      background-color: #eee;
+    }
+    
+    .container:nth-child(1) .inner {
+      box-shadow: 1em 1em 0 0 gray;
+    }
+    
+    .container:nth-child(2) .inner {
+      box-shadow: 1em 1em 0 0.5em gray;
+    }
+    
+    .container:nth-child(3) .inner {
+      box-shadow: 0 0 0 1em gray;
+    }
+    
+    .container:nth-child(n+4):nth-child(even) {
+      background-image: linear-gradient(60deg, lightgreen 50%, lightcoral 50%);
+    }
+    
+    .container:nth-child(5) {
+      background-image: linear-gradient(60deg, darkolivegreen 50%, sienna 50%);
+    }
+    
+    .container:nth-child(4) .inner {
+      box-shadow: 0 0 0 1em hsla(0, 0%, 0%, 0.3);
+    }
+    
+    .container:nth-child(5) .inner {
+      box-shadow: 0 0 0 1em hsla(0, 0%, 100%, 0.3);
+    }
+    
+    .container:nth-child(6) .inner {
+      box-shadow: 0 0 1em 0.3em hsla(0, 0%, 0%, 0.3);
+    }
+  </style>
+</head>
+
+<body>
+  <figure class="container">
+    <div class="inner"></div>
+  </figure>
+  <figure class="container">
+    <div class="inner"></div>
+  </figure>
+  <figure class="container">
+    <div class="inner"></div>
+  </figure>
+  <figure class="container">
+    <div class="inner"></div>
+  </figure>
+  <figure class="container">
+    <div class="inner"></div>
+  </figure>
+  <figure class="container">
+    <div class="inner"></div>
+  </figure>
+</body>
+
+</html>

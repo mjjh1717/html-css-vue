@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .container {
+      display: flex;
+    }
+    
+    .container div {
+      font-size: 25px;
+      width: 10em;
+      height: 10em;
+      outline: 1px solid gray;
+      position: relative;
+      margin: 2em 0 0 2em;
+    }
+    
+    .container div::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: inherit;
+      height: inherit;
+      clip-path: ellipse(5em 10em at 50% 100%);
+    }
+    
+    .container div:nth-child(1) {
+      background-image: linear-gradient(gray 1px, transparent 1px), linear-gradient(to right, gray 1px, transparent 1px), linear-gradient(to right bottom, lightskyblue, lightyellow, lightpink);
+      background-size: 1em 1em, 1em 1em, 100% 100%;
+    }
+    
+    .container div:nth-child(1)::before {
+      background-color: hsla(0, 0%, 0%, 0.5);
+    }
+    
+    .container div:nth-child(1)::after {
+      content: '';
+      position: absolute;
+      bottom: -0.5em;
+      left: 4.5em;
+      width: 1em;
+      height: 1em;
+      background-color: orange;
+      border-radius: 50%;
+    }
+    
+    .container div:nth-child(2)::before {
+      background-image: linear-gradient(to right bottom, lightskyblue, lightyellow, lightpink);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div></div>
+    <div></div>
+  </div>
+</body>
+
+</html>
